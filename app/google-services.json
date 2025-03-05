@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "87186419974",
+    "project_id": "login---register-project",
+    "storage_bucket": "login---register-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87186419974:android:4caae951ad3478e4986e87",
+        "android_client_info": {
+          "package_name": "com.example.fundra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYS79Oh9Z78G0viKXlJ8MZ04sxHR3NdI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
