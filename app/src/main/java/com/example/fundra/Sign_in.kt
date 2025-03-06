@@ -20,9 +20,23 @@ class Sign_in : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        binding.signInText.setOnClickListener {
+            val intent = Intent(this, Sign_up::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.forgetPassword.setOnClickListener{
+            val intent = Intent(this, ForgetPass::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding.SignInBtn.setOnClickListener {
             val email = binding.emailET.text.toString().trim()
             val password = binding.passwordET.text.toString().trim()
+          //  val remember = binding.remember.isChecked
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(

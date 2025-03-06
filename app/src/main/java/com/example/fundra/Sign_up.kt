@@ -4,11 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.fundra.databinding.ActivitySignInBinding
 import com.example.fundra.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -28,37 +24,32 @@ class Sign_up : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        // 🔹 زر التسجيل
         binding.signUpBtn.setOnClickListener {
-            val email = binding.emailET.text.toString()
-            val name = binding.namelET.text.toString()
-            val password = binding.passwordET.text.toString()
+            val email = binding.emailET.text.toString().trim()
+            val name = binding.namelET.text.toString().trim()
+            val password = binding.passwordET.text.toString().trim()
 
-            binding.signUpBtn.setOnClickListener {
-                val email = binding.emailET.text.toString().trim()
-                val password = binding.passwordET.text.toString().trim()
-
-                // Corrected condition: Ensure both fields are not empty
-                if (name.isNotEmpty()&& email.isNotEmpty() && password.isNotEmpty()) {
-                    firebaseAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                val intent = Intent(this, Home::class.java)
-                                startActivity(intent)
-                                finish()
-                            } else {
-                                Toast.makeText(
-                                    this,
-                                    "Error: ${task.exception?.message}",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                Log.e("FirebaseAuth", "Exception: ${task.exception?.message}")
-                            }
+            if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(this, Home::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            Log.e("FirebaseAuth", "Exception: ${task.exception?.message}")
                         }
-                } else {
-                    Toast.makeText(this, "Empty Fields Are Not Allowed!", Toast.LENGTH_SHORT).show()
-                }
+                    }
+            } else {
+                Toast.makeText(this, "Empty Fields Are Not Allowed!", Toast.LENGTH_SHORT).show()
             }
         }
     }
 }
-
