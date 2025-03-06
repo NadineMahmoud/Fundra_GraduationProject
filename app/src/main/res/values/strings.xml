@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Fundra</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="Sign_up">Sign up?</string>
+    <string name="get_started">Get Started</string>
+    <string name="i_agree_to_the_processing_of_personal_data">I agree to the processing of Personal data</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
 </resources>
