@@ -25,7 +25,6 @@ class Sign_up : AppCompatActivity() {
             finish()
         }
 
-        // 🔹 زر التسجيل
         binding.signUpBtn.setOnClickListener {
             val email = binding.emailET.text.toString().trim()
             val name = binding.namelET.text.toString().trim()

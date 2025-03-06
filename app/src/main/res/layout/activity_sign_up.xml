@@ -115,7 +115,7 @@
                     android:inputType="textPassword"
                     android:fontFamily="sans-serif"
                     android:textFontWeight="600"
-                    android:hintTextColor="@color/white"
+                    app:hintTextColor="@color/white"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -134,7 +134,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_marginTop="10dp"
-                android:text="Sign Up"
+                android:textSize="18sp"
+                android:text="@string/sign"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
                 android:background="@drawable/sign_btn"

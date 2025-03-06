@@ -21,9 +21,8 @@
     <string name="education">Education</string>
     <string name="donation">Donation</string>
     <string name="Companies">Companies</string>
-    <string name="continue">Continue</string>
-    <string name="continue">Continue</string>
     <string name="wellcome_back">Wellcome Back</string>
     <string name="back"><![CDATA[< Back]]></string>
     <string name="enter_your_full_name">Enter your full Name</string>
+    <string name="sign">Sign Up</string>
 </resources>

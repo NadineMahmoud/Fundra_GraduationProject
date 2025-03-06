@@ -32,6 +32,11 @@ class Sign_in : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        binding.backBtn.setOnClickListener{
+            val intent = Intent(this, Sign_up::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         binding.SignInBtn.setOnClickListener {
             val email = binding.emailET.text.toString().trim()

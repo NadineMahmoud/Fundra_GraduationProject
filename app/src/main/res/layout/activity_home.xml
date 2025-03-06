@@ -10,16 +10,21 @@
     tools:context=".Home">
 
     <!-- Header Section -->
-    <TextView
-        android:id="@+id/hello"
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello User            Notifications"
-        android:textSize="30sp"
+        android:text="@string/back"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/search"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:rippleColor="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/search"
@@ -30,7 +35,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hello" />
+        app:layout_constraintTop_toBottomOf="@id/back_btn" />
 
     <!-- Categories Section -->
 
