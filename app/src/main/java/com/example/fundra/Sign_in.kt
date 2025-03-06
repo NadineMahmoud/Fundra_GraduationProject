@@ -2,6 +2,8 @@ package com.example.fundra
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,16 +20,32 @@ class Sign_in : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        binding.SignInBtn.setOnClickListener {
+            val email = binding.emailET.text.toString().trim()
+            val password = binding.passwordET.text.toString().trim()
 
-        binding.signInText.setOnClickListener {
-            startActivity(Intent(this, Sign_up::class.java))
-            finish()
-        }
-        binding.SignInBtn.setOnClickListener{
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-            finish()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(
+                    email,
+                    password
+                ) // ✅ استخدمي تسجيل الدخول بدل إنشاء حساب جديد
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(this, Home::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            Log.e("FirebaseAuth", "Exception: ${task.exception?.message}")
+                        }
+                    }
+            } else {
+                Toast.makeText(this, "Empty Fields Are Not Allowed!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

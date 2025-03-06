@@ -11,4 +11,14 @@
     <string name="i_agree_to_the_processing_of_personal_data">I agree to the processing of Personal data</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in">Sign in</string>
+    <string name="home">Home</string>
+    <string name="chatbot">chatbot</string>
+    <string name="balance">balance</string>
+    <string name="account">account</string>
+    <string name="companies">Companies</string>
+    <string name="projects">Projects</string>
+    <string name="health">Health</string>
+    <string name="education">Education</string>
+    <string name="donation">Donation</string>
+    <string name="Companies">Companies</string>
 </resources>

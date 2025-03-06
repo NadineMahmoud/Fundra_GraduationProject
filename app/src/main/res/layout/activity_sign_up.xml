@@ -93,26 +93,25 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/signupbox"
                     android:hint="Enter Your Password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/i_agree_to_the_processing_of_personal_data"
-                android:layout_marginTop="30dp" />
+                android:layout_marginTop="20dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 android:text="Sign Up"
                 android:textStyle="bold"
-                android:minHeight="48dp"
-                android:minWidth="48dp"
-                app:cornerRadius="100dp"
                 android:fontFamily="sans-serif"
                 android:background="@drawable/sign_btn"
                 app:backgroundTint="@null" />
