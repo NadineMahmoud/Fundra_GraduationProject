@@ -9,20 +9,7 @@
     tools:context=".Sign_up">
 
 
-    <androidx.constraintlayout.utils.widget.MotionButton
-        android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
-        android:elevation="0dp"
-        app:rippleColor="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
 
     <ImageView
         android:id="@+id/coins"
@@ -57,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/get_started"
+                android:textColor="@color/black1"
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
                 android:textSize="30sp" />
@@ -66,8 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black">
+                app:boxStrokeColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/namelET"
@@ -86,8 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black">
+                app:boxStrokeColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailET"

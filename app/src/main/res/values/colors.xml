@@ -4,9 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="grey">#EFF1F1</color>
+    <color name="grey">#E9E9E9</color>
     <color name="navy_blue">#24C6E4</color>
     <color name="primary">#FFFFFF</color>
     <color name="darkGray">#092F37</color>
     <color name="grey1">#B2B2B2</color>
+    <color name="black1">#092F37</color>
 </resources>
