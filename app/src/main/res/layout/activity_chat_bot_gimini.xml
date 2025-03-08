@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/SendButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    android:onClick="sendButton"
     tools:context=".ChatBotGimini">
-    <?xml version="1.0" encoding="utf-8"?>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,24 +48,26 @@
 
                 <!-- Output EditText (Chat display) -->
                 <EditText
+                    android:id="@+id/editTextTextOutput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextTextOutput"
                     android:textColor="@color/black1"
                     android:inputType="textMultiLine"
                     android:fontFamily="sans-serif"
+                    android:textSize="25sp"
                     android:background="@drawable/messege"
-                    android:hint="Output displyed here..."
+                    android:hint="@string/output_displayed_here"
                     android:layout_marginTop="0dp"
-                    android:layout_marginBottom="0dp"/>
-
+                    android:layout_marginBottom="0dp"
+                    android:focusable="false"
+                    android:cursorVisible="false"/>
 
                 <!-- Input EditText (User Input) -->
                 <EditText
                     android:id="@+id/editTextTextInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Ask fundra..."
+                    android:hint="Ask Fundra..."
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
                     android:layout_marginTop="450dp"
@@ -76,15 +77,19 @@
                 <!-- Send Button -->
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Send"
+                    android:textSize="20sp"
                     android:background="@drawable/sign_btn"
                     app:backgroundTint="@null"
                     android:onClick="sendButton"
                     android:layout_marginTop="10dp"
                     android:padding="10dp"/>
+
+
             </LinearLayout>
         </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

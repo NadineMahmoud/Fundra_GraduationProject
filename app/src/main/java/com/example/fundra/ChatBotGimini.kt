@@ -13,13 +13,13 @@ import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.content
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-
 class ChatBotGimini : AppCompatActivity() {
 
-    lateinit var editTextInput: EditText
-    lateinit var editTextOutput: EditText
-    lateinit var chat: Chat
-    var stringBuilder: StringBuilder = java.lang.StringBuilder()
+    private lateinit var editTextInput: EditText
+    private lateinit var editTextOutput: EditText
+    private lateinit var chat: Chat
+    private var stringBuilder: StringBuilder = StringBuilder()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_bot_gimini)
@@ -27,31 +27,37 @@ class ChatBotGimini : AppCompatActivity() {
         editTextInput = findViewById(R.id.editTextTextInput)
         editTextOutput = findViewById(R.id.editTextTextOutput)
 
+        // إنشاء الموديل أول ما تفتح الشاشة
+        val generativeModel = GenerativeModel(
+            modelName = "gemini-pro",
+            apiKey = "AIzaSyCvyg7b0zNIf2PbMIC1FXRphrfA-MywDhQ"
+        )
+        chat = generativeModel.startChat(
+            history = listOf(
+                content(role = "user") { text("Hello, I have 2 dogs in my house.") },
+                content(role = "model") { text("Great to meet you. What would you like to know?") }
+            )
+        )
+
+        // إضافة الحوار الأول لمربع النص
+        stringBuilder.append("Hello, I have 2 dogs in my house.\n\n")
+        stringBuilder.append("Great to meet you. What would you like to know?\n\n")
+        editTextOutput.setText(stringBuilder.toString())
     }
 
     fun sendButton(view: View) {
-        if (!::chat.isInitialized) {
-            val generativeModel = GenerativeModel(
-                modelName = "gemini-pro",
-                apiKey = "AIzaSyCvyg7b0zNIf2PbMIC1FXRphrfA-MywDhQ"
-            )
-            chat = generativeModel.startChat(
-                history = listOf(
-                    content(role = "user") { text("Hello, I have 2 dogs in my house.") },
-                    content(role = "model") { text("Great to meet you. What would you like to know?") }
-                )
-            )
-            stringBuilder.append("Hello, I have 2 dogs in my house.\n\n")
-            stringBuilder.append("Great to meet you. What would you like to know?\n\n")
-        }
+        val userInput = editTextInput.text.toString().trim()
+        if (userInput.isEmpty()) return // منع الإرسال الفارغ
 
-        stringBuilder.append(editTextInput.text.toString() + "\n\n")
+        stringBuilder.append("You: $userInput\n\n")
+        editTextOutput.setText(stringBuilder.toString())
 
         MainScope().launch {
-            val result = chat.sendMessage(editTextInput.text.toString())
-            stringBuilder.append(result.text + "\n\n")
+            val result = chat.sendMessage(userInput)
+            stringBuilder.append("Bot: ${result.text}\n\n")
             editTextOutput.setText(stringBuilder.toString())
-            editTextInput.setText("")
+
+            editTextInput.setText("") // مسح حقل الإدخال بعد الإرسال
         }
     }
 }
