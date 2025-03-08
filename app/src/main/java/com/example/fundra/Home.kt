@@ -22,6 +22,11 @@ class Home : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        binding.companies.setOnClickListener{
+            val intent = Intent(this, ChatBotGimini::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 }
