@@ -5,8 +5,12 @@
     android:id="@+id/SendButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/main_bg">
+    tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/firstlogo"
+        android:background="@color/navy_blue"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

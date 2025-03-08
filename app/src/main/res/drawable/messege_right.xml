@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!-- الخلفية الأساسية للرسالة -->
+        <item>
+            <shape android:shape="rectangle">
+                <solid android:color="#E0E0E0"/> <!-- لون الخلفية -->
+                <corners android:topLeftRadius="20dp" android:topRightRadius="20dp" android:bottomLeftRadius="22dp"/>
+                <padding android:right="24dp" android:top="10dp" android:left="16dp" android:bottom="10dp"/>
+            </shape>
+        </item>
+
+        <!-- ذيل الفقاعة -->
+        <item android:gravity="end|bottom">
+            <shape android:shape="rectangle">
+                <solid android:color="#E0E0E0"/>
+                <size android:width="22dp" android:height="20dp"/>
+            </shape>
+        </item>
+
+    </layer-list>
+
