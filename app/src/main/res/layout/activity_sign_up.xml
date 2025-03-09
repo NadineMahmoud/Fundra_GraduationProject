@@ -90,6 +90,7 @@
                 android:id="@+id/passwordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:passwordToggleEnabled ="true"
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -99,6 +100,7 @@
                     android:background="@drawable/signupbox"
                     android:hint="Enter Your Password"
                     android:inputType="textPassword"
+
                     android:fontFamily="sans-serif"
                     android:textFontWeight="600"
                     app:hintTextColor="@color/white"
