@@ -2,6 +2,7 @@ package com.example.fundra
 
 import MessageAdapter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
@@ -16,8 +17,9 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 
+
 class ChatBot : AppCompatActivity() {
-    private val API_KEY = "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"
+    private val API_KEY =  BuildConfig.OPENAI_API_KEY
     private lateinit var recyclerView: RecyclerView
     private lateinit var welcomeText: TextView
     private lateinit var messageEditText: EditText
