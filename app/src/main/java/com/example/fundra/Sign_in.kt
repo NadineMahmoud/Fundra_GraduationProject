@@ -4,16 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.fundra.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class Sign_in : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,18 +21,21 @@ class Sign_in : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Users")
 
         binding.signInText.setOnClickListener {
             val intent = Intent(this, Sign_up::class.java)
             startActivity(intent)
             finish()
         }
-        binding.forgetPassword.setOnClickListener{
+
+        binding.forgetPassword.setOnClickListener {
             val intent = Intent(this, ForgetPass::class.java)
             startActivity(intent)
             finish()
         }
-        binding.backBtn.setOnClickListener{
+
+        binding.backBtn.setOnClickListener {
             val intent = Intent(this, Sign_up::class.java)
             startActivity(intent)
             finish()
@@ -41,18 +44,15 @@ class Sign_in : AppCompatActivity() {
         binding.SignInBtn.setOnClickListener {
             val email = binding.emailET.text.toString().trim()
             val password = binding.passwordET.text.toString().trim()
-          //  val remember = binding.remember.isChecked
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                firebaseAuth.signInWithEmailAndPassword(
-                    email,
-                    password
-                ) // ✅ استخدمي تسجيل الدخول بدل إنشاء حساب جديد
+                firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val intent = Intent(this, Home::class.java)
-                            startActivity(intent)
-                            finish()
+                            val userId = firebaseAuth.currentUser?.uid
+                            if (userId != null) {
+                                getUserBalance(userId) // ✅ استدعاء دالة جلب الرصيد
+                            }
                         } else {
                             Toast.makeText(
                                 this,
@@ -66,5 +66,21 @@ class Sign_in : AppCompatActivity() {
                 Toast.makeText(this, "Empty Fields Are Not Allowed!", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun getUserBalance(userId: String) {
+        database.child(userId).child("balance").get()
+            .addOnSuccessListener { snapshot ->
+                val balance = snapshot.getValue(Double::class.java) ?: 0.0
+
+                val intent = Intent(this, Home::class.java)
+                intent.putExtra("userBalance", balance)
+                startActivity(intent)
+                finish()
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firebase", "Failed to fetch balance: ${exception.message}")
+                Toast.makeText(this, "Failed to fetch balance", Toast.LENGTH_SHORT).show()
+            }
     }
 }
