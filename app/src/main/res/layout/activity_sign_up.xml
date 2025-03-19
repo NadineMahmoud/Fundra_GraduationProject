@@ -97,12 +97,9 @@
                     android:background="@drawable/signupbox"
                     android:hint="Enter Your Password"
                     android:inputType="textPassword"
-
                     android:fontFamily="sans-serif"
                     android:textFontWeight="600"
-                    app:hintTextColor="@color/white"
-
-                    />
+                    app:hintTextColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
@@ -113,20 +110,53 @@
                 android:textSize="15sp"
                 android:fontFamily="sans-serif"
                 android:text="@string/i_agree_to_the_processing_of_personal_data"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="10dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textSize="18sp"
                 android:text="@string/sign"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
                 android:background="@drawable/sign_btn"
                 app:backgroundTint="@null" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/sign_in_tx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign_up with"
+                android:textColor="@color/grey1"
+                android:textSize="17sp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:src="@drawable/facebook"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:src="@drawable/google"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:src="@drawable/microsoft"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -139,8 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/already_have_an_account"
-                    android:textColor="@color/grey1"
-                    android:layout_marginEnd="10dp"/>
+                    android:textColor="@color/grey1" />
 
                 <TextView
                     android:id="@+id/sign_up_text"

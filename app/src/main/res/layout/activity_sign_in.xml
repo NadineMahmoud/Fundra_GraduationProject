@@ -8,20 +8,6 @@
     android:background="@drawable/main_bg"
     tools:context=".Sign_in">
 
-    <androidx.constraintlayout.utils.widget.MotionButton
-        android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
-        android:elevation="0dp"
-        app:rippleColor="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/coins"
@@ -75,7 +61,7 @@
                     android:background="@drawable/signupbox"
                     android:textFontWeight="600"
                     android:fontFamily="sans-serif"
-                    android:hint="@string/enter_your_email"
+                    android:hint="Email"
                     android:textColorHint="@color/white"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +80,7 @@
                     android:background="@drawable/signupbox"
                     android:textFontWeight="600"
                     android:fontFamily="sans-serif"
-                    android:hint="@string/enter_your_password"
+                    android:hint="Password"
                     android:textColorHint="@color/white"
                     android:backgroundTint="@null"
                     android:inputType="textPassword" />
@@ -105,13 +91,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="20dp">
 
             <CheckBox
                 android:id="@+id/remember"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
+                android:textSize="18sp"
                 android:text="@string/remember_me"
                 android:layout_marginEnd="70dp"/>
                 <TextView
@@ -119,6 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
+                    android:textSize="18sp"
                     android:text="@string/forgot_password"
                     android:textColor="@color/navy_blue"/>
             </LinearLayout>
@@ -140,23 +128,58 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp"/>
-
+            <TextView
+                android:id="@+id/sign_in_tx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_in_with"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/grey1"
+                android:textSize="20sp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:src="@drawable/facebook"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:src="@drawable/google"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:src="@drawable/microsoft"/>
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/don_t_have_an_account"
-                android:textSize="18sp"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/grey1"/>
             <TextView
                 android:id="@+id/signInText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Sign_up"
-                android:textSize="18sp"
+                android:text="Sign_up"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
                 android:textColor="@color/navy_blue" />
-
-
+</LinearLayout>
         </LinearLayout>
+
     </FrameLayout>
 
 

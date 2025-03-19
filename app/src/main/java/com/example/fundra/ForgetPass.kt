@@ -1,53 +1,51 @@
 package com.example.fundra
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.databinding.ActivityForgetPassBinding
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 class ForgetPass : AppCompatActivity() {
     private lateinit var binding: ActivityForgetPassBinding
-    private var email = ""
+    private lateinit var emailET: EditText
+    private lateinit var resetBtn: Button
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityForgetPassBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_forget_pass)
 
         auth = FirebaseAuth.getInstance()
+        emailET = findViewById(R.id.emailET)
+        resetBtn = findViewById(R.id.resetBtn)
 
-        binding.resetBtn.setOnClickListener {
-            email = binding.emailET.text.toString().trim()
-
-            if (email.isEmpty()) {
-                binding.emailET.error = "Enter your email"
-                return@setOnClickListener
+        resetBtn.setOnClickListener {
+            val email = emailET.text.toString().trim()
+            if (email.isNotEmpty()) {
+                sendPasswordResetEmail(email)
+            } else {
+                Toast.makeText(this, "Enter your email", Toast.LENGTH_SHORT).show()
             }
+        }
+        binding.go.setOnClickListener {
+            val intent = Intent(this, Sign_in::class.java)
+            startActivity(intent)
+        }
+    }
 
-            // Show progress bar and hide button
-            binding.resetBtn.visibility = View.GONE
-            binding.pBar.visibility = View.VISIBLE
-
-            auth.sendPasswordResetEmail(email).addOnSuccessListener {
-                binding.resetBtn.visibility = View.VISIBLE
-                binding.pBar.visibility = View.GONE
-                Snackbar.make(
-                    binding.root,
-                    "Password reset sent to your $email address.",
-                    Snackbar.ANIMATION_MODE_SLIDE
-                ).show()
-            }.addOnFailureListener {
-                binding.resetBtn.visibility = View.VISIBLE
-                binding.pBar.visibility = View.GONE
-                Snackbar.make(
-                    binding.root,
-                    "Error: ${it.message}",
-                    Snackbar.ANIMATION_MODE_SLIDE
-                ).show()
+    private fun sendPasswordResetEmail(email: String) {
+        auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(this, "Password reset link sent to your email.", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
 }

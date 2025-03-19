@@ -35,12 +35,6 @@ class Sign_in : AppCompatActivity() {
             finish()
         }
 
-        binding.backBtn.setOnClickListener {
-            val intent = Intent(this, Sign_up::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         binding.SignInBtn.setOnClickListener {
             val email = binding.emailET.text.toString().trim()
             val password = binding.passwordET.text.toString().trim()
@@ -50,9 +44,7 @@ class Sign_in : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             val userId = firebaseAuth.currentUser?.uid
-                            if (userId != null) {
-                                getUserBalance(userId) // ✅ استدعاء دالة جلب الرصيد
-                            }
+
                         } else {
                             Toast.makeText(
                                 this,
@@ -66,21 +58,5 @@ class Sign_in : AppCompatActivity() {
                 Toast.makeText(this, "Empty Fields Are Not Allowed!", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun getUserBalance(userId: String) {
-        database.child(userId).child("balance").get()
-            .addOnSuccessListener { snapshot ->
-                val balance = snapshot.getValue(Double::class.java) ?: 0.0
-
-                val intent = Intent(this, Home::class.java)
-                intent.putExtra("userBalance", balance)
-                startActivity(intent)
-                finish()
-            }
-            .addOnFailureListener { exception ->
-                Log.e("Firebase", "Failed to fetch balance: ${exception.message}")
-                Toast.makeText(this, "Failed to fetch balance", Toast.LENGTH_SHORT).show()
-            }
     }
 }

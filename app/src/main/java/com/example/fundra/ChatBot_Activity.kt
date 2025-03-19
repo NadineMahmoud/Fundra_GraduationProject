@@ -26,6 +26,7 @@ class ChatBotActivity : AppCompatActivity() {
 
         binding.backButton.setOnClickListener {
             val intent = Intent(this, Home::class.java)
+            startActivity(intent)
         }
     }
 
@@ -55,7 +56,7 @@ class ChatBotActivity : AppCompatActivity() {
     }
 
     private fun fetchGeminiResponse(userMessage: String) {
-        val apiKey = "API"
+        val apiKey = "Your API"
         val apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$apiKey"
         val client = OkHttpClient()
         val requestBody = """

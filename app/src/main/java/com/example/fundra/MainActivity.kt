@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         // Delay moving to Sign_up activity for 2 seconds
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, Sign_up::class.java))
+            startActivity(Intent(this, Sign_in::class.java))
             finish()
         }, 2000)
     }
