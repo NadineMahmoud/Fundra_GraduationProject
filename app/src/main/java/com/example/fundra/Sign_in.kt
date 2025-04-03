@@ -45,16 +45,19 @@ class Sign_in : AppCompatActivity() {
                         if (task.isSuccessful) {
                             val userID = firebaseAuth.currentUser?.uid
                             if (userID != null) {
-                                database.child(userID).child("name").get()
-                                    .addOnSuccessListener { dataSnapshot ->
-                                        val userName = dataSnapshot.getValue(String::class.java) ?: "New User"
+                                database.child(userID).get()
+                                    .addOnSuccessListener { snapshot ->
+                                        val userName = snapshot.child("name").getValue(String::class.java) ?: "New User"
+                                        val balance = snapshot.child("balance").getValue(Double::class.java) ?: 0.0
+
                                         val intent = Intent(this, Home::class.java)
                                         intent.putExtra("userName", userName)
+                                        intent.putExtra("userBalance", balance)
                                         startActivity(intent)
                                         finish()
                                     }
                                     .addOnFailureListener {
-                                        Log.e("FirebaseDebug", "Failed to fetch user name in Sign_in: ${it.message}")
+                                        Log.e("FirebaseDebug", "Failed to fetch user data in Sign_in: ${it.message}")
                                         startActivity(Intent(this, Home::class.java))
                                         finish()
                                     }
@@ -64,11 +67,7 @@ class Sign_in : AppCompatActivity() {
                             }
 
                         } else {
-                            Toast.makeText(
-                                this,
-                                "Error: ${task.exception?.message}",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                             Log.e("FirebaseAuth", "Exception: ${task.exception?.message}")
                         }
                     }

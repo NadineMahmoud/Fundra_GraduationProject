@@ -56,7 +56,8 @@ class Sign_up : AppCompatActivity() {
                                     if (userID != null) {
                                         val userData = hashMapOf(
                                             "name" to name,
-                                            "email" to email
+                                            "email" to email,
+                                            "balance" to 0.0 // ✅ إضافة الرصيد الافتراضي
                                         )
                                         database.child(userID).setValue(userData)
                                             .addOnSuccessListener {

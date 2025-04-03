@@ -5,6 +5,109 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMoneyActivity">
+    tools:context=".AddMoneyActivity"
+    android:background="@drawable/main_bg">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="back"
+        android:src="@drawable/back"
+        android:background="@drawable/back_btn"
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/currentalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$30,850.00"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="40sp"/>
+    <TextView
+        android:id="@+id/av"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/available_balance"
+        android:textColor="@color/white"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/currentalance"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:id="@+id/fram_balance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/av"
+        app:layout_constraintVertical_bias="1.0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/frame"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Money"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/balanceTX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="EGP 00"
+            android:gravity="center"
+            android:textSize="64sp"
+            android:fontFamily="sans-serif"
+            android:background="@color/transparent_black"
+            android:layout_marginTop="100dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.0% fee will be applied"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/grey1"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continue_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:textColor="@color/black"
+            android:textFontWeight="600"
+            android:textSize="20sp"
+            android:text="Continue"
+            app:cornerRadius="100dp"
+            android:fontFamily="sans-serif"
+            android:background="@drawable/sign_btn"
+            app:backgroundTint="@null"/>
+
+
+
+    </LinearLayout>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
