@@ -31,5 +31,16 @@
     <string name="ask_fundra">Ask Fundra...</string>
     <string name="chat_bot">Chat Bot</string>
     <string name="sign_in_with">Sign in with</string>
+    <string name="otp_code_verification">OTP Code Verification</string>
+    <string name="we_have_an_otp_code_to_your_email_enter_the_otp_code_below_to_verify">We have an OTP code to your email Enter the OTP code below to verify</string>
+    <string name="didn_t_receive_email_you_can_resend_code_in_50s">Didn’t receive email? You can resend code in 50s</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up_with">Sign_up with</string>
+    <string name="face">face</string>
+    <string name="google">google</string>
+    <string name="micro">micro</string>
+    <string name="we_have_send_an_otp_code_to_your_email_enter_the_otp_code_below_to_verify">We have send an OTP code to your email Enter the OTP code below to verify</string>
+    <string name="available_balance">Available Balance</string>
 
 </resources>

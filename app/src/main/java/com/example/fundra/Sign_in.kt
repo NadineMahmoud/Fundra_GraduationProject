@@ -23,7 +23,7 @@ class Sign_in : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
 
-        binding.signInText.setOnClickListener {
+        binding.signUPText.setOnClickListener {
             val intent = Intent(this, Sign_up::class.java)
             startActivity(intent)
             finish()
@@ -43,7 +43,25 @@ class Sign_in : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val userId = firebaseAuth.currentUser?.uid
+                            val userID = firebaseAuth.currentUser?.uid
+                            if (userID != null) {
+                                database.child(userID).child("name").get()
+                                    .addOnSuccessListener { dataSnapshot ->
+                                        val userName = dataSnapshot.getValue(String::class.java) ?: "New User"
+                                        val intent = Intent(this, Home::class.java)
+                                        intent.putExtra("userName", userName)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    .addOnFailureListener {
+                                        Log.e("FirebaseDebug", "Failed to fetch user name in Sign_in: ${it.message}")
+                                        startActivity(Intent(this, Home::class.java))
+                                        finish()
+                                    }
+                            } else {
+                                startActivity(Intent(this, Home::class.java))
+                                finish()
+                            }
 
                         } else {
                             Toast.makeText(
