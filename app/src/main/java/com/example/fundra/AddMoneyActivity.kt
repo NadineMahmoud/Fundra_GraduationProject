@@ -6,8 +6,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.databinding.ActivityAddMoneyBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AddMoneyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddMoneyBinding
@@ -36,16 +39,20 @@ class AddMoneyActivity : AppCompatActivity() {
                 val newBalance = balanceText.toDoubleOrNull()
 
                 if (newBalance != null && newBalance > 0) {
-                    val fee = newBalance * 0.01 // 1% fee
+                    val fee = newBalance * 0.001 // 1% fee
                     val finalBalance = newBalance - fee
 
                     // إرسال الرصيد إلى AddMoneyCardActivity
                     val intent = Intent(this, AddMoneyCardActivity::class.java)
                     intent.putExtra("currentBalance", finalBalance) // إرسال الرصيد بعد خصم الرسوم
                     startActivity(intent)
+                    updateBalance(userId!!, finalBalance)
+
+
                 } else {
                     Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
                 }
+
             }
         binding.backButton.setOnClickListener {
             startActivity(Intent(this, Wallet_Activity::class.java))
@@ -66,21 +73,34 @@ class AddMoneyActivity : AppCompatActivity() {
     }
 
     private fun updateBalance(userId: String, amountToAdd: Double) {
-        database.child(userId).child("balance").get().addOnSuccessListener { snapshot ->
-            val currentBalance = snapshot.value.toString().toDoubleOrNull() ?: 0.0
-            val updatedBalance = currentBalance + amountToAdd
+        database.child(userId).child("balance").addListenerForSingleValueEvent(object :
+            ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val currentBalance = snapshot.getValue(Double::class.java) ?: 0.0
+                val updatedBalance = currentBalance + amountToAdd
 
-            database.child(userId).child("balance").setValue(updatedBalance)
-                .addOnSuccessListener {
-                    binding.currentalance.text = "$$updatedBalance"
-                    binding.balanceTX.text.clear()
-                    Toast.makeText(this, "Balance updated successfully!", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Failed to update balance", Toast.LENGTH_SHORT).show()
-                }
-        }.addOnFailureListener {
-            Toast.makeText(this, "Error fetching balance", Toast.LENGTH_SHORT).show()
-        }
+                database.child(userId).child("balance").setValue(updatedBalance)
+                    .addOnSuccessListener {
+                        binding.currentalance.text = "$$updatedBalance"
+                        binding.balanceTX.text.clear()
+                        Toast.makeText(
+                            this@AddMoneyActivity,
+                            "Balance updated successfully!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(
+                            this@AddMoneyActivity,
+                            "Failed to update balance",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@AddMoneyActivity, "Error fetching balance", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        })
     }
 }

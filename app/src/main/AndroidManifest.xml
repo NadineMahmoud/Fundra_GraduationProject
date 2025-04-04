@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Fundra"
         tools:targetApi="31">
         <activity
+            android:name=".FirstCompanyActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddMoneyCardActivity"
             android:exported="false" />
         <activity

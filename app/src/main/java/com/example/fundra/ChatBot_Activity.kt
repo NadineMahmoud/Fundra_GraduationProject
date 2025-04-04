@@ -56,7 +56,7 @@ class ChatBotActivity : AppCompatActivity() {
     }
 
     private fun fetchGeminiResponse(userMessage: String) {
-        val apiKey = "AIzaSyAmWrGrl_0ZgnyRBTk91r9ugdQ_X9VQMP8"
+        val apiKey = ""
         val apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$apiKey"
         val client = OkHttpClient()
         val requestBody = """
