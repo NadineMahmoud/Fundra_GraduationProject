@@ -52,18 +52,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black">
+                app:hintTextColor="@color/white"
+                app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signupbox"
-                    android:textFontWeight="600"
                     android:fontFamily="sans-serif"
                     android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:textColorHint="@color/white"
-                    android:inputType="textEmailAddress" />
+                    android:textFontWeight="600" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
