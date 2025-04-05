@@ -7,4 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".Account_Activity">
 
+
+    <!-- البادج اللي شكله داخل في النص -->
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/rounded_bg"
+        android:padding="24dp"
+        android:text="This is the main text with a notch from top."
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_circle"
+        android:text="NEW"
+        android:textStyle="bold"
+        android:textColor="#6200EE"
+        android:padding="8dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toTopOf="@id/mainText"
+        app:layout_constraintStart_toStartOf="@id/mainText"
+        app:layout_constraintEnd_toEndOf="@id/mainText"
+        android:layout_marginBottom="-12dp"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
