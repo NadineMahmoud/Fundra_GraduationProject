@@ -1,3 +1,4 @@
+import com.android.tools.r8.internal.jp
 import java.util.Properties
 
 plugins {

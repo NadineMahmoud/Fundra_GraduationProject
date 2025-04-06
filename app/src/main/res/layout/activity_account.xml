@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Account_Activity">
+    tools:context=".Account_Activity"
+    android:background="@drawable/main_bg">
+<!--
 
-
-    <!-- البادج اللي شكله داخل في النص -->
     <TextView
         android:id="@+id/mainText"
         android:layout_width="0dp"
@@ -39,7 +39,34 @@
         app:layout_constraintEnd_toEndOf="@id/mainText"
         android:layout_marginBottom="-12dp"/>
 
+-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/glassEffect"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="#33FFFFFF"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
+        <View android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@drawable/glass_effect"/>
+    </androidx.cardview.widget.CardView>
+    <!--  Text on top of the effect  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:text="Glass Effect"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,5 +42,19 @@
     <string name="micro">micro</string>
     <string name="we_have_send_an_otp_code_to_your_email_enter_the_otp_code_below_to_verify">We have send an OTP code to your email Enter the OTP code below to verify</string>
     <string name="available_balance">Available Balance</string>
+    <string name="you_will_be_investing_in_immersed_through_an_spv_this_means_that_when_you_invest_you_will_be_signing_the_spv_subscription_agreement_not_the_direct_investment_contract"><![CDATA[You will be investing in Immersed through an SPV. This means that when you invest, you will be signing the SPV Subscription Agreement, not the direct investment contract.]]></string>
+    <string name="convertible_note">Convertible Note</string>
+    <string name="_200m_valiation_cap">$200M valiation cap</string>
+    <string name="investment_terms">Investment Terms</string>
+    <string name="invest">invest</string>
+    <string name="raised_from_393_investors">raised from 393 investors</string>
+    <string name="_2_279_700">$2,279,700</string>
+    <string name="first_goal_hit_you_can_still_invest">FIRST GOAL HIT (you can still invest)</string>
+    <string name="immersed">IMMERSED</string>
+    <string name="back1">back</string>
+    <string name="where_things_should_change">where things should change</string>
+    <string name="service_charge">Service charge</string>
+    <string name="total_amount">Total amount</string>
+    <string name="commision">commision</string>
 
 </resources>
