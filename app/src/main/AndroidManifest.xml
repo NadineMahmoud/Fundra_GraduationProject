@@ -18,6 +18,15 @@
         android:theme="@style/Theme.Fundra"
         tools:targetApi="31">
         <activity
+            android:name=".NewCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyCardFragment"
+            android:exported="false" />
+        <activity
+            android:name=".AddCardActivity"
+            android:exported="false" />
+        <activity
             android:name=".FirstCompanyActivity"
             android:exported="false" />
         <activity

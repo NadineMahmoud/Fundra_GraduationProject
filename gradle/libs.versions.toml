@@ -1,5 +1,6 @@
 [versions]
 agp = "8.8.2"
+dotsindicator = "4.3"
 gson = "2.10.1"
 kotlin = "1.9.24"
 coreKtx = "1.15.0"
@@ -20,6 +21,7 @@ firebaseFunctionsKtx = "21.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

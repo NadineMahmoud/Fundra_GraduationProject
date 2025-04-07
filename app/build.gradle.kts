@@ -1,4 +1,3 @@
-import com.android.tools.r8.internal.jp
 import java.util.Properties
 
 plugins {
@@ -20,12 +19,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    android {
-        buildFeatures {
-            viewBinding = true
-            buildConfig = true
-        }
-    }
 
     val localProperties = Properties()
     val localPropertiesFile = rootProject.file("local.properties")
@@ -33,17 +26,18 @@ android {
         localProperties.load(localPropertiesFile.inputStream())
     }
 
-    android {
-        buildTypes {
-            debug {
-                buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("GEMINI_API_KEY")}\"")
-            }
-            release {
-                buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("GEMINI_API_KEY")}\"")
-            }
+    buildTypes {
+        debug {
+            buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("GEMINI_API_KEY")}\"")
+        }
+        release {
+            buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("GEMINI_API_KEY")}\"")
+        }
+        buildFeatures {
+            viewBinding = true
+            buildConfig = true
         }
     }
-
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -67,9 +61,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.generativeai)
     implementation(libs.okhttp)
     implementation(libs.okhttp.v493)
     implementation(libs.gson)
-
+    implementation(libs.dotsindicator)
 }

@@ -26,7 +26,7 @@ class Home : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference.child("Users")
 
-        updateUserName() // ✅ تحديث اسم المستخدم عند الدخول
+        updateUserName()
 
         showFragment(CompaniesFragment())
 

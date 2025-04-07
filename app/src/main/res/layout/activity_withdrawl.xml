@@ -32,10 +32,11 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
+        android:textColor="@color/black1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/backButton"
         android:fontFamily="sans-serif-medium"
-        android:textSize="40sp" />
+        android:textSize="50sp" />
 
     <!-- Label -->
     <TextView
@@ -83,16 +84,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="EGP 350"
-                android:textColor="@color/grey1"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
                 android:textSize="32sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:background="@drawable/bill_background"
                 android:padding="16dp">
 
@@ -113,14 +115,13 @@
                     android:id="@+id/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
                     android:text="0.00 EGP"
                     android:textAlignment="textEnd"
                     android:textColor="#80000000"
                     android:textSize="15sp"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="sans-serif-medium"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/serviceCharge"
@@ -142,6 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15.00 EGP"
+                    android:layout_marginTop="10dp"
                     android:textAlignment="textEnd"
                     android:textColor="#80000000"
                     android:textSize="15sp"
@@ -154,7 +156,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#DDD"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -169,6 +171,7 @@
                     android:text="@string/total_amount"
                     android:textColor="#092F37"
                     android:textSize="15sp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="sans-serif-medium"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Line"/>
@@ -181,6 +184,7 @@
                     android:textAlignment="textEnd"
                     android:textColor="#80000000"
                     android:textSize="15sp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="sans-serif-medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Line"/>

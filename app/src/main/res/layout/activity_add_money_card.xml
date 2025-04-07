@@ -26,7 +26,7 @@
         android:id="@+id/currentalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:text="$30,850.00"
@@ -87,7 +87,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/signupbox"
-                android:textFontWeight="600"
                 android:fontFamily="sans-serif"
                 android:hint="Cardholder name"
                 android:textColorHint="@color/grey"
@@ -107,7 +106,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/signupbox"
-                android:textFontWeight="600"
                 android:fontFamily="sans-serif"
                 android:hint="Card number"
                 android:textColorHint="@color/grey"
@@ -117,14 +115,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
 
+            <!-- TextInputLayout for Expiry Date -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/expireLayout"
-                android:layout_width="154dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
+                android:layout_weight="1"
                 app:boxStrokeColor="@color/black"
                 app:hintTextColor="@color/black">
 
@@ -134,18 +133,22 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/signupbox"
                     android:fontFamily="sans-serif"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
                     android:hint="Expiry date"
+                    android:layout_marginEnd="20dp"
                     android:inputType="textEmailAddress"
                     android:textColorHint="@color/grey"
-                    android:textFontWeight="600" />
+                    android:gravity="start" />  <!-- محاذاة النص إلى اليسار -->
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- TextInputLayout for CVV -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/cvvLayout"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_weight="1"
                 app:boxStrokeColor="@color/black"
                 app:hintTextColor="@color/black">
 
@@ -154,27 +157,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signupbox"
-                    android:textFontWeight="600"
                     android:fontFamily="sans-serif"
                     android:hint="CVV"
                     android:textColorHint="@color/grey"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:gravity="end" />
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:text="Save this card for later"
+            android:layout_gravity="start"
+            android:textStyle="bold" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/continue_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="100dp"
             android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="20sp"
-            android:text="Continue"
+            android:text="Add Money"
             app:cornerRadius="100dp"
             android:fontFamily="sans-serif"
             android:background="@drawable/sign_btn"
             app:backgroundTint="@null"/>
+
 
     </LinearLayout>
     </FrameLayout>
