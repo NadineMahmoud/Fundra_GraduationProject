@@ -48,6 +48,10 @@ class AddMoneyActivity : AppCompatActivity() {
                     startActivity(intent)
                     updateBalance(userId!!, finalBalance)
 
+                    val intent2 = Intent(this, WithdrawlActivity::class.java)
+                    intent2.putExtra("currentBalance", finalBalance) // إرسال الرصيد بعد خصم الرسوم
+                    updateBalance(userId!!, finalBalance)
+
 
                 } else {
                     Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
