@@ -1,15 +1,12 @@
-package com.example.fundra
+package com.example.fundra.balance
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.fundra.databinding.ActivityAddMoneyBinding
+import com.example.fundra.menu.Wallet_Activity
 import com.example.fundra.databinding.ActivityNewCardBinding
 
 class NewCardActivity : AppCompatActivity() {
@@ -34,6 +31,7 @@ class NewCardActivity : AppCompatActivity() {
                     startActivity(Intent(this, Wallet_Activity::class.java))
                     finish()
                 },2000)
+                Toast.makeText(this, "Card Saved Successfully", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Empty Fields Are Not Allowed!", Toast.LENGTH_SHORT).show()
             }

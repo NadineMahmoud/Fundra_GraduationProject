@@ -1,0 +1,122 @@
+package com.example.fundra.balance
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.fundra.R
+import com.example.fundra.menu.Wallet_Activity
+import com.example.fundra.databinding.ActivityAddMoneyBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
+class AddMoneyActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAddMoneyBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: DatabaseReference
+    private var userId: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityAddMoneyBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val language = resources.getStringArray(R.array.drop_menu)
+       // val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_doem_item, language)
+     //   binding.autoCompleteTV.setAdapter(arrayAdapter)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Users")
+
+        val currentUser = firebaseAuth.currentUser
+        if (currentUser != null) {
+            userId = currentUser.uid
+            loadCurrentBalance(userId!!)
+        } else {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.continueBtn.setOnClickListener {
+            val balanceText = binding.balanceTX.text.toString()
+            val newBalance = balanceText.toDoubleOrNull()
+
+            if (newBalance != null && newBalance > 0) {
+                val fee = newBalance * 0.001 // 1% fee
+                val finalBalance = newBalance - fee
+
+                updateBalance(userId!!, finalBalance)
+
+                startActivity(Intent(this, CardsActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
+
+            }
+
+        }
+        binding.backButton.setOnClickListener {
+            startActivity(Intent(this, Wallet_Activity::class.java))
+        }
+    }
+
+    private fun loadCurrentBalance(userId: String) {
+        database.child(userId).child("balance").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    val balance = snapshot.getValue(Double::class.java) ?: 0.0
+                    Log.d("AddMoneyActivity", "Loaded balance: $balance")
+                    binding.currentalance.text = "$$balance"
+                } else {
+                    Log.d("AddMoneyActivity", "No balance found")
+                    binding.currentalance.text = "$0.00"
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@AddMoneyActivity, "Failed to load balance", Toast.LENGTH_SHORT).show()
+                Log.e("AddMoneyActivity", "Error fetching balance: ${error.message}")
+            }
+        })
+    }
+
+    private fun updateBalance(userId: String, amountToAdd: Double) {
+        database.child(userId).child("balance")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val currentBalance = snapshot.getValue(Double::class.java) ?: 0.0
+                    val updatedBalance = currentBalance + amountToAdd
+
+                    database.child(userId).child("balance").setValue(updatedBalance)
+                        .addOnSuccessListener {
+                            binding.currentalance.text = "$$updatedBalance"
+                            binding.balanceTX.text.clear()
+                            Toast.makeText(
+                                this@AddMoneyActivity,
+                                "Balance updated successfully!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(
+                                this@AddMoneyActivity,
+                                "Failed to update balance",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(
+                        this@AddMoneyActivity,
+                        "Error fetching balance",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
+    }
+}

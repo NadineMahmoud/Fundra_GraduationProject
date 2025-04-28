@@ -14,5 +14,11 @@
         <item name="colorSecondary">@color/primary</item>
     </style>
 
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
     <style name="Theme.NavigationBar" parent="Base.Theme.NavigationBar" />
 </resources>

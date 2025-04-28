@@ -19,7 +19,7 @@ class CompaniesFragment : Fragment() {
     ): View {
         viewBinding = FragmentCompaniesBinding.inflate(inflater, container, false)
 
-        viewBinding.Firstcompany.setOnClickListener {
+        viewBinding.FirstLarge.setOnClickListener {
             val intent = Intent(requireContext(), FirstCompanyActivity::class.java)
             startActivity(intent)
         }

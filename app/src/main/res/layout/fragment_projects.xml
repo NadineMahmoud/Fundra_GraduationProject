@@ -4,4 +4,80 @@
     android:layout_height="match_parent"
     android:background="@color/grey3">
 
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- أول كارد -->
+            <FrameLayout
+                android:layout_width="250dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="16dp">
+
+                <!-- صورة الخلفية -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bussines"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/companies_background" />
+
+                <!-- الأيقونة -->
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/bussines"
+                    android:layout_gravity="top|end" />
+
+                <!-- البوكس الشفاف -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:background="@drawable/company_details"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sybertech"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spatial Computing (XR) AI Agent to Supercharge Productivity"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="120% funded"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="end" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- كرري الـ FrameLayout ده للتكرار التاني والثالث -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

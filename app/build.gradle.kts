@@ -65,4 +65,6 @@ dependencies {
     implementation(libs.okhttp.v493)
     implementation(libs.gson)
     implementation(libs.dotsindicator)
+    implementation(libs.lottie)
+
 }

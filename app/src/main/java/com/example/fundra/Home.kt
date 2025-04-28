@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.fundra.Fragments.*
 import com.example.fundra.databinding.ActivityHomeBinding
+import com.example.fundra.menu.Account_Activity
+import com.example.fundra.menu.ChatBotActivity
+import com.example.fundra.menu.Wallet_Activity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -22,6 +25,11 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.notification.setOnClickListener{
+            val intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
 
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference.child("Users")
@@ -42,9 +50,7 @@ class Home : AppCompatActivity() {
         binding.edu.setOnClickListener {
             showFragment(EducationFragment())
         }
-        binding.donation.setOnClickListener {
-            showFragment(DonationFragment())
-        }
+
 
         binding.menuNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -66,6 +72,10 @@ class Home : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+        binding.donation.setOnClickListener{
+            val intent = Intent(this, DonationFragment::class.java)
+            startActivity(intent)
         }
     }
     @SuppressLint("SetTextI18n")

@@ -20,6 +20,7 @@
             android:background="@drawable/back_btn"
             android:src="@drawable/notification"
             android:contentDescription="Notifications"
+            app:layout_constraintBottom_toTopOf="@id/search"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -33,8 +34,9 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:fontFamily="serif"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toTopOf="@id/userText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -130,6 +132,7 @@
             android:layout_height="64dp"
             app:cardCornerRadius="12dp"
             android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toTopOf="@id/projects_tv"
             app:layout_constraintStart_toEndOf="@id/companies"
             app:layout_constraintTop_toTopOf="@id/companies"
             app:layout_constraintEnd_toStartOf="@id/health">

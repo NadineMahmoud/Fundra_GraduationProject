@@ -1,10 +1,11 @@
-package com.example.fundra
+package com.example.fundra.balance
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fundra.R
 
 class CardsAdapter (private val cardsList: List<Int>) :
         RecyclerView.Adapter<CardsAdapter.ImageViewHolder>() {

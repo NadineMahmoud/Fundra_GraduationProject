@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMoneyActivity"
+    tools:context=".balance.AddMoneyActivity"
     android:background="@drawable/main_bg">
 
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="back"
+        android:contentDescription="@string/back"
         android:src="@drawable/back"
         android:background="@drawable/back_btn"
         android:padding="10dp"
@@ -26,12 +26,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$30,850.00"
+        android:textStyle="bold"
+        android:textColor="@color/darkGray"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/backButton"
         android:fontFamily="sans-serif-medium"
-        android:textSize="40sp"/>
+        android:textSize="50sp"/>
     <TextView
         android:id="@+id/av"
         android:layout_width="wrap_content"
@@ -47,7 +49,8 @@
         android:id="@+id/fram_balance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@id/av"
         app:layout_constraintVertical_bias="1.0">
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
@@ -63,23 +66,53 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Money"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/add_money"
+                android:textSize="20sp"
+                android:layout_marginStart="80dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/drop_menu"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:id="@+id/drop_menu"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/title">
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:text="English"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         <EditText
             android:id="@+id/balanceTX"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="EGP 00"
+            android:textColorHint="#80000000"
+            android:textStyle="bold"
+            android:textColor="#80000000"
             android:gravity="center"
             android:textSize="64sp"
-        android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif"
             android:background="@color/transparent_black"
             android:layout_marginTop="100dp"/>
         <TextView
@@ -88,7 +121,7 @@
             android:text="1.0% fee will be applied"
             android:gravity="center"
             android:textSize="18sp"
-            android:textColor="@color/grey1"
+            android:textColor="#4D000040"
             android:fontFamily="sans-serif-medium"
             android:layout_marginTop="10dp" />
 

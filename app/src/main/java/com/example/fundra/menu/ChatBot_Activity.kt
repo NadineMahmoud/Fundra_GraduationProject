@@ -1,9 +1,12 @@
-package com.example.fundra
+package com.example.fundra.menu
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fundra.Home
+import com.example.fundra.Message
+import com.example.fundra.MessageAdapter
 import com.example.fundra.databinding.ActivityChatBotBinding
 import okhttp3.*
 import com.google.gson.JsonParser

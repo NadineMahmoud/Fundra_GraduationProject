@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/text_sign"
                 android:elevation="2dp"
                 android:padding="8dp"

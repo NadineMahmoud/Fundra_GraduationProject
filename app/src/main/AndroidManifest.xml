@@ -18,43 +18,43 @@
         android:theme="@style/Theme.Fundra"
         tools:targetApi="31">
         <activity
-            android:name=".NewCardActivity"
+            android:name=".CommunityActivity"
             android:exported="false" />
         <activity
-            android:name=".MyCardFragment"
+            android:name=".SavedActivity"
             android:exported="false" />
         <activity
-            android:name=".AddCardActivity"
+            android:name=".balance.NewCardActivity"
             android:exported="false" />
         <activity
             android:name=".FirstCompanyActivity"
             android:exported="false" />
         <activity
-            android:name=".AddMoneyCardActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CardsActivity"
+            android:name=".balance.CardsActivity"
             android:exported="false" />
         <activity
             android:name=".WithdrawlActivity"
             android:exported="false" />
         <activity
-            android:name=".AddMoneyActivity"
+            android:name=".balance.AddMoneyActivity"
             android:exported="false" />
         <activity
             android:name=".ResetNewPassword"
             android:exported="false" />
         <activity
-            android:name=".ChatBotActivity"
+            android:name=".menu.ChatBotActivity"
             android:exported="false" />
         <activity
-            android:name=".Account_Activity"
+            android:name=".NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".Wallet_Activity"
+            android:name=".menu.Account_Activity"
             android:exported="false" />
         <activity
-            android:name=".Home_Activity"
+            android:name=".menu.Wallet_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.Home_Activity"
             android:exported="false" />
         <activity
             android:name=".OTP"
