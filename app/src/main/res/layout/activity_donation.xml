@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
+               <ImageView
                     android:id="@+id/baheya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -241,7 +241,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/black_donation"
                     android:textSize="13sp"
-                    app:layout_constraintEnd_toEndOf="@id/donation_container"
+                    app:layout_constraintEnd_toEndOf="@id/ahl_masr"
                     app:layout_constraintStart_toStartOf="@id/ahl_masr"
                     app:layout_constraintTop_toBottomOf="@id/ahl_masr" />
 
@@ -271,7 +271,7 @@
                     android:textColor="@color/black_donation"
                     android:textSize="13sp"
                     app:layout_constraintEnd_toEndOf="@id/red_helal"
-                    app:layout_constraintStart_toStartOf="@id/donation_container"
+                    app:layout_constraintStart_toStartOf="@id/red_helal"
                     app:layout_constraintTop_toBottomOf="@id/red_helal" />
 
 
@@ -529,6 +529,8 @@
                     app:layout_constraintEnd_toEndOf="@id/resala"
                     app:layout_constraintStart_toStartOf="@id/resala"
                     app:layout_constraintTop_toBottomOf="@id/resala" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

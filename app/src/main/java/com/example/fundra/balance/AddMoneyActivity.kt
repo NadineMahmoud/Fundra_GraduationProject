@@ -26,7 +26,6 @@ class AddMoneyActivity : AppCompatActivity() {
         binding = ActivityAddMoneyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val language = resources.getStringArray(R.array.drop_menu)
        // val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_doem_item, language)
      //   binding.autoCompleteTV.setAdapter(arrayAdapter)
 

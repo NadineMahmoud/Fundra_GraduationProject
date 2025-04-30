@@ -113,10 +113,14 @@
     <string name="banque_misr">Banque Misr</string>
     <string name="masr_el_n_kheir">Masr El\n Kheir</string>
     <string name="_57357_nhospital">57357\nHospital</string>
-    <string-array name="drop_menu">
-        <item>Arabic</item>
-        <item>Germany</item>
-        <item>french</item>
+    <string-array name="Donation">
+        <item>All</item>
+        <item>Zakah Mal</item>
+        <item>Kafalah Mareed</item>
+        <item>Chemotheraphy Kafalah</item>
+        <item>Special causes</item>
     </string-array>
+
+
 
 </resources>
