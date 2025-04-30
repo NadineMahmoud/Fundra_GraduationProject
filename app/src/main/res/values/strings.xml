@@ -111,6 +111,8 @@
     <string name="_30_850_00">$30,850.00</string>
     <string name="withdraw">Withdraw</string>
     <string name="banque_misr">Banque Misr</string>
+    <string name="masr_el_n_kheir">Masr El\n Kheir</string>
+    <string name="_57357_nhospital">57357\nHospital</string>
     <string-array name="drop_menu">
         <item>Arabic</item>
         <item>Germany</item>

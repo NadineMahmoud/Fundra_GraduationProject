@@ -24,6 +24,9 @@
             android:name=".SavedActivity"
             android:exported="false" />
         <activity
+            android:name=".DonationActivity"
+            android:exported="true" />
+        <activity
             android:name=".balance.NewCardActivity"
             android:exported="false" />
         <activity

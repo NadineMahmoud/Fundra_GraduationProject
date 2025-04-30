@@ -73,10 +73,11 @@ class Home : AppCompatActivity() {
                 else -> false
             }
         }
-        binding.donation.setOnClickListener{
-            val intent = Intent(this, DonationFragment::class.java)
+        binding.donation.setOnClickListener {
+            val intent = Intent(this, DonationActivity::class.java)
             startActivity(intent)
         }
+
     }
     @SuppressLint("SetTextI18n")
     private fun updateUserName() {

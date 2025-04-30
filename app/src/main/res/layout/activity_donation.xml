@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_bg">
+
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/back"
+        android:src="@drawable/back"
+        android:background="@drawable/back_btn"
+        android:padding="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/donation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donation"
+        android:fontFamily="@font/open_sans_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/filter"
+        android:background="@drawable/back_btn"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="60dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/donation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/frame_donation">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            style="@style/CustomSearchViewStyle"
+            app:queryHint="Search / donate anywhere"
+            android:background="@color/white"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp" />
+    </androidx.cardview.widget.CardView>
+    <FrameLayout
+        android:id="@+id/frame_donation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/donation_frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/donation_frame"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Categories"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/donation_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/baheya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/baheya"
+                    android:tag="Hospitals / Medical Aids"
+                    app:layout_constraintBottom_toTopOf="@id/baheya_tx"
+                    app:layout_constraintEnd_toStartOf="@id/magdy"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="@id/donation_container"
+                    app:layout_constraintTop_toTopOf="@id/donation_container" />
+
+                <TextView
+                    android:id="@+id/baheya_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Baheya"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/baheya"
+                    app:layout_constraintStart_toStartOf="@id/baheya"
+                    app:layout_constraintTop_toBottomOf="@id/baheya" />
+
+                <ImageView
+                    android:id="@+id/magdy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/magdy"
+                    android:tag="Hospitals / Medical Aids"
+                    app:layout_constraintBottom_toTopOf="@id/magdy_tx"
+                    app:layout_constraintEnd_toStartOf="@id/elnas"
+                    app:layout_constraintStart_toEndOf="@id/baheya"
+                    app:layout_constraintTop_toTopOf="@id/donation_container" />
+
+                <TextView
+                    android:id="@+id/magdy_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Magdi\nyacoub"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@id/five"
+                    app:layout_constraintEnd_toEndOf="@id/magdy"
+                    app:layout_constraintStart_toStartOf="@id/magdy"
+                    app:layout_constraintTop_toBottomOf="@id/magdy" />
+
+
+                <ImageView
+                    android:id="@+id/elnas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:tag="Hospitals / Medical Aids"
+                    android:src="@drawable/elnas"
+                    app:layout_constraintBottom_toTopOf="@id/elnas_tx"
+                    app:layout_constraintEnd_toStartOf="@id/seven_five"
+                    app:layout_constraintStart_toEndOf="@id/magdy"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/elnas_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="AlNas\nHospital"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/seven_five_tx"
+                    app:layout_constraintStart_toEndOf="@id/magdy_tx"
+                    app:layout_constraintTop_toBottomOf="@id/elnas" />
+
+                <ImageView
+                    android:id="@+id/seven_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:tag="Hospitals / Medical Aids"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/seven"
+                    app:layout_constraintBottom_toTopOf="@id/seven_five_tx"
+                    app:layout_constraintEnd_toStartOf="@id/ahl_masr"
+                    app:layout_constraintStart_toEndOf="@id/elnas"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/seven_five_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/_57357_nhospital"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/seven_five"
+                    app:layout_constraintStart_toStartOf="@id/seven_five"
+                    app:layout_constraintTop_toBottomOf="@id/seven_five" />
+
+                <ImageView
+                    android:id="@+id/ahl_masr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:tag="Food / Community development"
+                    android:src="@drawable/masr"
+                    app:layout_constraintBottom_toTopOf="@id/ahl_masr_tx"
+                    app:layout_constraintEnd_toEndOf="@id/donation_container"
+                    app:layout_constraintStart_toEndOf="@id/seven_five"
+                    app:layout_constraintTop_toTopOf="@id/donation_container" />
+
+                <TextView
+                    android:id="@+id/ahl_masr_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Ahl Masr"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/donation_container"
+                    app:layout_constraintStart_toStartOf="@id/ahl_masr"
+                    app:layout_constraintTop_toBottomOf="@id/ahl_masr" />
+
+                <ImageView
+                    android:id="@+id/red_helal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/alhelal"
+                    android:layout_marginTop="0dp"
+                    android:tag="Hospitals / Medical Aids"
+                    app:layout_constraintBottom_toTopOf="@id/red_helal_tx"
+                    app:layout_constraintEnd_toStartOf="@+id/five"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintTop_toTopOf="@id/five"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="@id/donation_container"
+                    app:layout_constraintTop_toBottomOf="@id/baheya_tx" />
+
+                <TextView
+                    android:id="@+id/red_helal_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Egyptian\n Red\n Crescent"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/red_helal"
+                    app:layout_constraintStart_toStartOf="@id/donation_container"
+                    app:layout_constraintTop_toBottomOf="@id/red_helal" />
+
+
+                <ImageView
+                    android:id="@+id/five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:tag="Hospitals / Medical Aids"
+                    android:src="@drawable/five"
+                    app:layout_constraintBottom_toTopOf="@id/five_tx"
+                    app:layout_constraintEnd_toStartOf="@+id/life_makers"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/red_helal"
+                    app:layout_constraintTop_toBottomOf="@id/magdy_tx" />
+
+                <TextView
+                    android:id="@+id/five_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="500 500\nHospital"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@id/food_bank"
+                    app:layout_constraintEnd_toEndOf="@id/five"
+                    app:layout_constraintStart_toStartOf="@id/five"
+                    app:layout_constraintTop_toBottomOf="@id/five" />
+
+
+                <ImageView
+                    android:id="@+id/life_makers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:tag="Food / Community development"
+                    android:src="@drawable/lifemakers"
+                    app:layout_constraintBottom_toTopOf="@id/life_makers_tx"
+                    app:layout_constraintEnd_toStartOf="@+id/mersal"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/five"
+                    app:layout_constraintTop_toBottomOf="@id/elnas_tx" />
+
+                <TextView
+                    android:id="@+id/life_makers_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Life\n Makers"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/life_makers"
+                    app:layout_constraintStart_toStartOf="@id/life_makers"
+                    app:layout_constraintTop_toBottomOf="@id/life_makers" />
+
+
+                <ImageView
+                    android:id="@+id/mersal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:tag="Food / Community development"
+                    android:src="@drawable/mersal"
+                    app:layout_constraintBottom_toTopOf="@id/mersal_tx"
+                    app:layout_constraintEnd_toStartOf="@+id/hayah"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/life_makers"
+                    app:layout_constraintTop_toBottomOf="@id/seven_five_tx" />
+
+                <TextView
+                    android:id="@+id/mersal_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Mersal \nFoundation"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@id/mersal"
+                    app:layout_constraintTop_toBottomOf="@id/mersal" />
+
+
+                <ImageView
+                    android:id="@+id/hayah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:tag="Food / Community development"
+                    android:src="@drawable/hayah"
+                    app:layout_constraintTop_toTopOf="@id/mersal"
+                    app:layout_constraintBottom_toTopOf="@id/hayah_tx"
+                    app:layout_constraintEnd_toEndOf="@id/donation_container"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/mersal"
+                    app:layout_constraintTop_toBottomOf="@id/ahl_masr_tx" />
+
+                <TextView
+                    android:id="@+id/hayah_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Haya\n Kareema"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@id/hayah"
+                    app:layout_constraintTop_toBottomOf="@id/hayah" />
+
+
+                <ImageView
+                    android:id="@+id/closing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/closing"
+                    android:tag="Food / Community development"
+                    app:layout_constraintBottom_toTopOf="@id/closing_tx"
+                    app:layout_constraintEnd_toStartOf="@id/food_bank"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintTop_toTopOf="@id/food_bank"
+                    app:layout_constraintStart_toStartOf="@id/donation_container"
+                    app:layout_constraintTop_toBottomOf="@id/red_helal_tx" />
+
+                <TextView
+                    android:id="@+id/closing_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Egyptian\n Clothing\nBank"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/closing"
+                    app:layout_constraintStart_toStartOf="@id/closing"
+                    app:layout_constraintTop_toBottomOf="@id/closing" />
+
+                <ImageView
+                    android:id="@+id/food_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:tag="Food / Community development"
+                    android:src="@drawable/food_bank"
+                    app:layout_constraintBottom_toTopOf="@id/food_bank_tx"
+                    app:layout_constraintEnd_toStartOf="@id/masr_elkhair"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toEndOf="@id/closing"
+                    app:layout_constraintTop_toBottomOf="@id/five_tx" />
+
+                <TextView
+                    android:id="@+id/food_bank_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Egyptian\nFood\nBank"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/food_bank"
+                    app:layout_constraintStart_toStartOf="@id/food_bank"
+                    app:layout_constraintTop_toBottomOf="@id/food_bank" />
+
+                <ImageView
+                    android:id="@+id/masr_elkhair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:tag="Al Zakah / Al Sadakat"
+                    android:src="@drawable/masr_elkhar"
+                    app:layout_constraintBottom_toTopOf="@id/masr_elkhair_tx"
+                    app:layout_constraintEnd_toStartOf="@id/beet"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toEndOf="@id/food_bank"
+                    app:layout_constraintTop_toBottomOf="@id/mersal_tx" />
+
+                <TextView
+                    android:id="@+id/masr_elkhair_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="@string/masr_el_n_kheir"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/masr_elkhair"
+                    app:layout_constraintStart_toStartOf="@id/masr_elkhair"
+                    app:layout_constraintTop_toBottomOf="@id/masr_elkhair" />
+
+                <ImageView
+                    android:id="@+id/beet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:tag="Al Zakah / Al Sadakat"
+                    android:src="@drawable/bet_elzahah"
+                    app:layout_constraintBottom_toTopOf="@id/beet_tx"
+                    app:layout_constraintEnd_toStartOf="@id/resala"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toEndOf="@id/masr_elkhair"
+                    app:layout_constraintTop_toBottomOf="@id/mersal_tx" />
+
+                <TextView
+                    android:id="@+id/beet_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Biet El\n Zakah"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/beet"
+                    app:layout_constraintStart_toStartOf="@id/beet"
+                    app:layout_constraintTop_toBottomOf="@id/beet" />
+
+
+                <ImageView
+                    android:id="@+id/resala"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:tag="Food / Community development"
+                    android:src="@drawable/resallah"
+                    app:layout_constraintBottom_toTopOf="@id/resala_tx"
+                    app:layout_constraintEnd_toEndOf="@id/donation_container"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toEndOf="@id/beet"
+                    app:layout_constraintTop_toBottomOf="@id/hayah_tx" />
+
+                <TextView
+                    android:id="@+id/resala_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Resala"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_donation"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/resala"
+                    app:layout_constraintStart_toStartOf="@id/resala"
+                    app:layout_constraintTop_toBottomOf="@id/resala" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        android:elevation="100dp"
+        android:background="@drawable/menu_shape"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
