@@ -96,12 +96,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_bold"
-                    android:text="Categories"
+                    android:text="@string/categories"
                     android:textSize="20sp"
                     android:layout_marginBottom="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/donation_container"
@@ -532,6 +537,8 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
 
 
 
@@ -544,6 +551,7 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_menu"
         android:elevation="100dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/menu_shape"
         app:itemIconTint="@color/bottom_nav_item_color"
         android:backgroundTint="@color/primary"

@@ -13,10 +13,16 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 class DonationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDonationBinding
 
+
             override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
                 binding = ActivityDonationBinding.inflate(layoutInflater)
                 setContentView(binding.root)
+
+                binding.backButton.setOnClickListener {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
 
                 binding.baheya.setOnClickListener {
                     val intent = Intent(this, BaheyaActivity::class.java)
@@ -59,6 +65,7 @@ class DonationActivity : AppCompatActivity() {
             interface OnFilterSelectedListener {
                 fun onFilterSelected(type: String)
             }
+
 
         }
 
