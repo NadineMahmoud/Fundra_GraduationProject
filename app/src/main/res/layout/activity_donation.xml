@@ -538,11 +538,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             </ScrollView>
-
-
-
-
-
         </LinearLayout>
     </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -551,7 +546,6 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_menu"
         android:elevation="100dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/menu_shape"
         app:itemIconTint="@color/bottom_nav_item_color"
         android:backgroundTint="@color/primary"

@@ -6,12 +6,8 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.fundra.databinding.ActivityBaheyaBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -33,10 +29,10 @@ class BaheyaActivity : AppCompatActivity() {
         )
 
         val items =
-            listOf("All", "Zakah Mal", "Kafalah Mareed", "Chemotheraphy Kafalah", "Special causes")
+            listOf("All", "Zakat al-Mal", "Patient Sponsorship", "Chemotherapy Sponsorship", "Special causes")
 
         val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter2.setDropDownViewResource(android.R.layout.simple_list_item_1)
         binding.spinner.adapter = adapter2
 
         binding.backButton.setOnClickListener {
@@ -56,7 +52,7 @@ class BaheyaActivity : AppCompatActivity() {
                     .show()
 
                 if (selected == "Special causes") {
-                    val intent = Intent(this@BaheyaActivity, SpecialCausesActivity::class.java)
+                    val intent = Intent(this@BaheyaActivity, Special_CausesActivity ::class.java)
                     startActivity(intent)
                 }
             }

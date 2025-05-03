@@ -20,7 +20,7 @@ class DonationActivity : AppCompatActivity() {
                 setContentView(binding.root)
 
                 binding.backButton.setOnClickListener {
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, Home::class.java)
                     startActivity(intent)
                 }
 

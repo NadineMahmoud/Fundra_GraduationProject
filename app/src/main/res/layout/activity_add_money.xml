@@ -67,6 +67,7 @@
         android:orientation="vertical"
         android:padding="20dp">
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/add_money_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -83,23 +84,21 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/drop_menu"/>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:id="@+id/drop_menu"
-                    android:layout_width="0dp"
-                    android:layout_marginStart="50dp"
+                app:layout_constraintEnd_toStartOf="@id/spinner"/>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    app:backgroundTint="@color/white"
+                    android:layout_gravity="end|center"
+                    android:layout_marginStart="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/title">
-                    <AutoCompleteTextView
-                        android:id="@+id/autoCompleteTV"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="none"
-                        android:text="English"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                    app:layout_constraintStart_toEndOf="@id/title"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         <EditText

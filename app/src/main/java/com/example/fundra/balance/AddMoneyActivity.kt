@@ -3,6 +3,8 @@ package com.example.fundra.balance
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.R
@@ -26,8 +28,6 @@ class AddMoneyActivity : AppCompatActivity() {
         binding = ActivityAddMoneyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       // val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_doem_item, language)
-     //   binding.autoCompleteTV.setAdapter(arrayAdapter)
 
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
@@ -50,8 +50,7 @@ class AddMoneyActivity : AppCompatActivity() {
 
                 updateBalance(userId!!, finalBalance)
 
-                startActivity(Intent(this, CardsActivity::class.java))
-                finish()
+                startActivity(Intent(this, Wallet_Activity::class.java))
             } else {
                 Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
 
@@ -61,9 +60,25 @@ class AddMoneyActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener {
             startActivity(Intent(this, Wallet_Activity::class.java))
         }
-    }
 
-    private fun loadCurrentBalance(userId: String) {
+
+        val items = listOf(
+            mapOf("image" to R.drawable.bank_one_t_image, "text" to "3129"),
+            mapOf("image" to R.drawable.bank_three_image, "text" to "3328")
+        )
+
+        val adapter = SimpleAdapter(
+            this,
+            items,
+            R.layout.spinner,
+            arrayOf("image", "text"),
+            intArrayOf(R.id.item_icon, R.id.spinnerItemText)
+        )
+
+        binding.spinner.adapter = adapter
+
+    }
+        private fun loadCurrentBalance(userId: String) {
         database.child(userId).child("balance").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
