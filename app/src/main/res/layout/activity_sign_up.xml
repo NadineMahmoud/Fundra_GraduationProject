@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/get_started"
                 android:textColor="@color/black1"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/open_sans_bold"
                 android:textStyle="bold"
                 android:textSize="30sp" />
 
@@ -71,14 +71,24 @@
                 android:id="@+id/name_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp">
+                app:endIconMode="clear_text"
+                app:endIconTintMode="src_in"
+                android:layout_marginTop="24dp"
+                android:hint="Enter Full Name"
+                app:hintTextColor="@android:color/white"
+                android:textColorHint="@android:color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/namelET"
-                    android:background="@drawable/signupbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:background="@drawable/signupbox"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="15sp"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColor="@color/white"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             </FrameLayout>
@@ -96,8 +106,10 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/text_sign"
-                    android:elevation="2dp"
-                    android:padding="7dp"
+                    android:elevation="1dp"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
                     android:text="Email"
                     android:textColor="@color/black"
                     android:textSize="13sp"
@@ -108,6 +120,11 @@
                     android:id="@+id/emailLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:endIconMode="clear_text"
+                    app:endIconTintMode="src_in"
+                    android:hint="Enter Your Email"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
                     android:layout_marginTop="24dp">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -139,12 +156,21 @@
                     android:textColor="@color/black"
                     android:textSize="13sp"
                     android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/passwordLayout"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    app:endIconTintMode="src_in"
+                    android:layout_weight="1"
+                    android:hint="Enter Your Password"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
                     app:endIconMode="password_toggle">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -156,6 +182,41 @@
                         android:inputType="textPassword"
                         android:textColorHint="@color/white" />
                 </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/classificationLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginStart="10dp"
+                        app:endIconMode="dropdown_menu"
+                        android:background="@drawable/signupbox"
+                        app:endIconTintMode="src_in">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/classification_drop"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:endIconTintMode="src_in"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/classificationLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:background="@drawable/text_sign"
+                    android:elevation="2dp"
+                    android:padding="6dp"
+                    android:text="Classification"
+                    android:textColor="@color/black1"
+                    android:textSize="12sp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/open_sans_bold" />
             </FrameLayout>
             <CheckBox
                 android:id="@+id/checkbox"

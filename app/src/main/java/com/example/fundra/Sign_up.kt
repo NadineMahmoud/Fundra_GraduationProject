@@ -11,6 +11,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Log
+import android.widget.ArrayAdapter
 
 class Sign_up : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
@@ -23,12 +24,18 @@ class Sign_up : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().reference.child("Users") // ✅ قاعدة البيانات
+        database = FirebaseDatabase.getInstance().reference.child("Users")
 
         binding.signInText.setOnClickListener {
             startActivity(Intent(this, Sign_in::class.java))
             finish()
         }
+
+        val items = listOf("Investor", "Project Owner", "Both")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
+        binding.classificationDrop.setAdapter(adapter)
+
 
         binding.signUpBtn.setOnClickListener {
             val name = binding.namelET.text.toString().trim()

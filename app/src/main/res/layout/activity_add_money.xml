@@ -26,13 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$30,850.00"
-        android:textStyle="bold"
         android:textColor="@color/darkGray"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/backButton"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/open_sans_bold"
         android:textSize="50sp"/>
     <TextView
         android:id="@+id/av"
@@ -41,6 +40,7 @@
         android:text="@string/available_balance"
         android:textColor="@color/white"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans_semibold"
         app:layout_constraintTop_toBottomOf="@id/currentalance"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
@@ -75,9 +75,10 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/open_sans_bold"
                 android:text="@string/add_money"
                 android:textSize="20sp"
+                android:textColor="@color/black"
                 android:layout_marginStart="80dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +92,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:spinnerMode="dropdown"
-                    app:backgroundTint="@color/white"
+                    android:background="@drawable/signupbox"
+                    app:backgroundTint="@null"
+                    android:padding="5dp"
                     android:layout_gravity="end|center"
                     android:layout_marginStart="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +114,7 @@
             android:textColor="#80000000"
             android:gravity="center"
             android:textSize="64sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/open_sans_bold"
             android:background="@color/transparent_black"
             android:layout_marginTop="100dp"/>
         <TextView
@@ -121,7 +124,7 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="#4D000040"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/open_sans_bold"
             android:layout_marginTop="10dp" />
 
         <com.google.android.material.button.MaterialButton
@@ -134,7 +137,7 @@
             android:textSize="20sp"
             android:text="Continue"
             app:cornerRadius="100dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/open_sans_bold"
             android:background="@drawable/sign_btn"
             app:backgroundTint="@null"/>
 

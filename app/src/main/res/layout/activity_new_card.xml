@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/open_sans_bold"
         android:text="$00.00"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +41,7 @@
         android:text="@string/available_balance"
         android:textColor="@color/white"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/open_sans_bold"
         app:layout_constraintTop_toBottomOf="@id/currentalance"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
@@ -70,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Add Money"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/open_sans_bold"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
@@ -80,16 +81,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black">
+                app:textColorHint="#80000000"
+                app:hintTextColor="#80000000"
+                android:textColorHint="#80000000">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/cardholderTX"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/signupbox"
+                    android:background="@drawable/balance_box"
                     android:fontFamily="sans-serif"
                     android:hint="Cardholder name"
-                    android:textColorHint="@color/grey"
+                    app:textColorHint="#80000000"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,16 +101,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black">
+                app:boxStrokeColor="#80000000"
+                app:textColorHint="#80000000"
+                app:hintTextColor="#80000000"
+                android:textColorHint="#80000000">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/card_numberTX"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/signupbox"
+                    android:background="@drawable/balance_box"
                     android:fontFamily="sans-serif"
                     android:hint="Card number"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/card"
                     android:textColorHint="@color/grey"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -125,13 +132,15 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+                    app:textColorHint="#80000000"
+                    app:hintTextColor="#80000000"
+                    android:textColorHint="#80000000">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/expireTX"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/signupbox"
+                        android:background="@drawable/balance_box"
                         android:fontFamily="sans-serif"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
@@ -150,13 +159,15 @@
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
                     app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black">
+                    app:textColorHint="#80000000"
+                    app:hintTextColor="#80000000"
+                    android:textColorHint="#80000000">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/cvvTX"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/signupbox"
+                        android:background="@drawable/balance_box"
                         android:fontFamily="sans-serif"
                         android:hint="CVV"
                         android:textColorHint="@color/grey"
@@ -173,7 +184,7 @@
                 android:textSize="15sp"
                 android:text="Save this card for later"
                 android:layout_gravity="start"
-                android:textStyle="bold" />
+                android:fontFamily="@font/open_sans_bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/save_btn"
@@ -185,7 +196,7 @@
                 android:textSize="20sp"
                 android:text="Save Card"
                 app:cornerRadius="100dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/open_sans_bold"
                 android:background="@drawable/sign_btn"
                 app:backgroundTint="@null"/>
 

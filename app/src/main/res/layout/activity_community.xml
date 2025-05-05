@@ -3,8 +3,342 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/main_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CommunityActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Back  button -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="25dp"/>
+
+        <ImageButton
+            android:id="@+id/filterButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="25dp" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkGray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/backButton"
+            app:layout_constraintEnd_toStartOf="@id/filterButton"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="115dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="782dp"
+                android:adjustViewBounds="true"
+                android:elevation="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/frame"
+                app:tint="#EFF1F1" />
+
+        </LinearLayout>
+
+
+        <!-- Header with Title and Logo -->
+        <LinearLayout
+            android:id="@+id/topframe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="145dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Baheya"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:paddingLeft="40dp"
+                android:textColor="@color/darkGray" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/baheyaa"
+                android:contentDescription="Baheya Logo" />
+        </LinearLayout>
+
+        <!-- Frame background card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/frameCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topframe">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Select a Cause -->
+                <TextView
+                    android:id="@+id/labelSelectCause"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a Cause"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#092F37"
+                    android:layout_marginBottom="10dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/dropdownBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@android:drawable/edit_text"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/dropdownText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Donation Cause"
+                        android:textColor="#555555"
+                        android:textSize="14sp"
+                        android:layout_centerVertical="true"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/arrow"
+                        app:tint="@color/black1"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/phonenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#092F37"
+            android:layout_marginBottom="16dp"
+            android:layout_margin="3dp"
+            app:layout_constraintStart_toStartOf="@id/frameCard"
+            app:layout_constraintTop_toBottomOf="@id/frameCard"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/frameCard2"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="1dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@id/frameCard"
+            app:layout_constraintEnd_toEndOf="@id/frameCard"
+            app:layout_constraintTop_toBottomOf="@id/phonenumber">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/phoneIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/mobile"
+                    app:tint="#092F37"/>
+
+                <EditText
+                    android:id="@+id/mobileNumberInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/phoneIcon"
+                    android:inputType="phone"
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:background="@null"
+                    android:paddingStart="10dp"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#092F37"
+            android:layout_marginBottom="16dp"
+            android:layout_margin="3dp"
+            app:layout_constraintStart_toStartOf="@id/frameCard"
+            app:layout_constraintTop_toBottomOf="@id/frameCard2"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/frameCard3"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="1dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@id/frameCard2"
+            app:layout_constraintEnd_toEndOf="@id/frameCard2"
+            app:layout_constraintTop_toBottomOf="@id/amount">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/amountIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/amount"
+                    android:paddingStart="4dp"
+                    app:tint="#092F37"/>
+                <EditText
+                    android:id="@+id/amountInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Enter an Amount (5-60000)EGP"
+                    android:inputType="numberDecimal"
+                    android:textColor="#353535"
+                    android:textSize="14sp"
+                    android:background="@null"
+                    android:paddingStart="55dp"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay with"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#092F37"
+            android:layout_marginBottom="16dp"
+            android:layout_margin="3dp"
+            app:layout_constraintStart_toStartOf="@id/frameCard"
+            app:layout_constraintTop_toBottomOf="@id/frameCard3"
+            />
+
+        <!-- Pay with Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="@id/frameCard"
+            app:layout_constraintEnd_toEndOf="@id/frameCard"
+            app:layout_constraintTop_toBottomOf="@id/frameCard3">
+
+            <!-- RadioGroup for payment options -->
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Option 1: Selected card (XXXX-3328) -->
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:src="@drawable/case_one"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="XXXX-3328"
+                    android:textColor="#092F37"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Option 2: Another credit/debit Card -->
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:src="@drawable/card"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Another credit/debit Card"
+                    android:textColor="#092F37"
+                    android:textSize="14sp"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <!-- Donate Button -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Donate"
+            android:textSize="18sp"
+            android:textColor="#092F37"
+            android:backgroundTint="#24C6E4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

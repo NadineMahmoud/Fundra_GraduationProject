@@ -3,12 +3,15 @@ package com.example.fundra
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View.OnFocusChangeListener
+import android.view.View.OnTouchListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+
 
 class Sign_in : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
@@ -28,6 +31,17 @@ class Sign_in : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        binding.passwordET.setOnTouchListener { _, _ ->
+            binding.passwordET.hint = ""
+            false
+        }
+
+        binding.passwordET.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus && binding.passwordET.text.isNullOrEmpty()) {
+                binding.passwordET.hint = "Enter Your Password"
+            }
+        }
+
 
         binding.forgetPassword.setOnClickListener {
             val intent = Intent(this, ForgetPass::class.java)

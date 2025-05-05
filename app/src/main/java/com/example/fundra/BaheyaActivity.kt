@@ -29,7 +29,7 @@ class BaheyaActivity : AppCompatActivity() {
         )
 
         val items =
-            listOf("All", "Zakat al-Mal", "Patient Sponsorship", "Chemotherapy Sponsorship", "Special causes")
+            listOf("Donation Cause","All", "Zakat al-Mal", "Patient Sponsorship", "Chemotherapy Sponsorship", "Special causes")
 
         val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
         adapter2.setDropDownViewResource(android.R.layout.simple_list_item_1)
