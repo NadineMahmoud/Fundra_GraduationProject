@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Business_Owner_Activity"
+    android:background="@drawable/main_bg">
+
+
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/back"
+        android:src="@drawable/back"
+        android:background="@drawable/back_btn"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <FrameLayout
+        android:id="@+id/sign_up_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/frame"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_started"
+            android:textColor="@color/black1"
+            android:fontFamily="@font/open_sans_bold"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/Business_NameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/text_sign"
+                android:elevation="2dp"
+                android:padding="8dp"
+                android:text="Business Name"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- TextInput -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Business_Name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:endIconMode="clear_text"
+                app:endIconTintMode="src_in"
+                android:hint="Enter Business Name"
+                app:hintTextColor="@android:color/white"
+                android:textColorHint="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Business_NamelET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signupbox"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+
+        <!-- Email Field -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/Business_DescriptionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/text_sign"
+                android:elevation="1dp"
+                android:paddingHorizontal="15dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="8dp"
+                android:text="Business Description"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Business_DescriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:endIconMode="clear_text"
+                app:endIconTintMode="src_in"
+                android:hint="Describe Your Business"
+                app:hintTextColor="@android:color/white"
+                android:textColorHint="@android:color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Business_DescriptionET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signupbox"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+
+            <TextView
+                android:id="@+id/Business_CategoryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/text_sign"
+                android:elevation="2dp"
+                android:padding="6dp"
+                android:text="Business Category"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Business_CategoryLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:endIconTintMode="src_in"
+                    android:layout_weight="1"
+                    android:hint="Business Field"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Business_CategoryET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/signupbox"
+                        android:fontFamily="sans-serif"
+                        android:inputType="textLongMessage"
+                        android:textColorHint="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Current_StageLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="10dp"
+                    app:endIconMode="dropdown_menu"
+                    android:background="@drawable/signupbox"
+                    app:endIconTintMode="src_in"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/Current_Stage_drop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Choose"
+                        android:padding="12dp"
+                        android:background="@color/transparent_black"
+                        android:textColorHint="@color/white"
+                        android:textColor="@color/black1"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/Current_StageLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:background="@drawable/text_sign"
+                android:elevation="2dp"
+                android:padding="6dp"
+                android:layout_marginTop="5dp"
+                android:text="Current Stage"
+                android:textColor="@color/black1"
+                android:textSize="12sp"
+                android:layout_gravity="center|top"
+                android:fontFamily="@font/open_sans_bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+
+            <TextView
+                android:id="@+id/Investor_Return_TypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/text_sign"
+                android:elevation="2dp"
+                android:padding="6dp"
+                android:text="Investor Return Type"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Investor_Return_TypeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Choose"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconTintMode="src_in"
+                    android:layout_marginTop="17dp"
+                    android:background="@drawable/signupbox"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white">
+                    <AutoCompleteTextView
+                        android:id="@+id/Investor_Return_TypeET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:hint="Choose"
+                        android:padding="12dp"
+                        android:background="@color/transparent_black"
+                        android:textColorHint="@color/white"
+                        android:textColor="@color/white"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Team_MembersLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    app:endIconTintMode="src_in"
+                    android:hint="Business Field"
+                    app:hintTextColor="@android:color/white"
+                    android:textColorHint="@android:color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Team_Members_drop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/signupbox"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/black1"
+                        android:textColorHint="@color/white"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Team_MembersLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/text_sign"
+                android:elevation="2dp"
+                android:padding="6dp"
+                android:text="Team Members"
+                android:textColor="@color/black1"
+                android:textSize="12sp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/open_sans_bold" />
+        </FrameLayout>
+
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:text="Upload Business Plan"
+                    android:drawableEnd="@drawable/upload"
+                    android:paddingStart="7dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/black1"
+                    android:drawableTintMode="src_over"
+                    android:background="@drawable/upload_box"
+                    app:backgroundTint="@null"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Social_Media_LinksLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="7dp"
+                    android:hint="Attach Here"
+                    android:inputType="textLongMessage"
+                    android:textColorHint="@color/white"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Social_Media_LinksET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/signupbox"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:inputType="textPassword"
+                        android:textColorHint="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Social_Media_LinksLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginStart="75dp"
+                android:background="@drawable/text_sign"
+                android:elevation="2dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:padding="6dp"
+                android:layout_marginTop="-5dp"
+                android:text="Social Media Links"
+                android:textColor="@color/black1"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:buttonTint="@color/black1"
+            android:fontFamily="@font/open_sans_bold"
+            android:textColor="@color/black1"
+            android:text="@string/i_agree_to_the_processing_of_personal_data"
+            android:layout_marginTop="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_up_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:text="@string/sign"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:background="@drawable/sign_btn"
+            app:backgroundTint="@null" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/sign_in_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_with"
+            android:textStyle="bold"
+            android:textColor="@color/grey1"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:contentDescription="@string/face"
+                android:src="@drawable/facebook"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:contentDescription="@string/google"
+                android:src="@drawable/google"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:contentDescription="@string/micro"
+                android:src="@drawable/microsoft"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_an_account"
+                android:textColor="@color/grey1"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/sign_in_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_in"
+                android:textSize="20sp"
+                android:textColor="@color/navy_blue"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

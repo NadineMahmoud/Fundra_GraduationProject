@@ -70,168 +70,56 @@
                 android:fontFamily="@font/open_sans_bold"
                 android:textSize="20sp" />
 
-            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-                android:id="@+id/dots_indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:dotsColor="@color/gray"
-                app:selectedDotColor="@color/navy_blue"
-                app:dotsSize="8dp"
-                app:dotsSpacing="4dp"/>
-
             <RadioGroup
-                android:id="@+id/radioGroup"
+                android:id="@+id/bankRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:gravity="center"
-                android:padding="4dp">
+                android:gravity="center">
 
-                <!-- Card 1 with RadioButton -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/radio1"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:id="@+id/bankInfoLayout"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="20dp"
-                    android:layout_marginBottom="8dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/currentBankImage"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/currentBankName"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="@color/grey"
-                        android:gravity="center_horizontal">
+                        android:text="Bank Name"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/banque_misr"
-                            android:textSize="16sp"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="bold"
-                            android:layout_weight="1"
-                            android:paddingEnd="8dp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginEnd="8dp"
-                            android:src="@drawable/bank_one_t_image" />
-
-                        <RadioButton
-                            android:id="@+id/radioButton1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/navy_blue"
-                            android:background="@null"
-                            android:text=""
-                            android:layout_margin="4dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Card 2 with RadioButton -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/radio2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="20dp"
-                    android:background="@drawable/card_info_backgroud"
-                    android:layout_marginBottom="8dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <RadioButton
+                        android:id="@+id/currentBankRadio"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="@color/grey"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Banque Misr"
-                            android:textSize="16sp"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="bold"
-                            android:layout_weight="1"
-                            android:paddingEnd="8dp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/bank_one_t_image"
-                            android:layout_marginEnd="8dp"
-                            />
-                        <RadioButton
-                            android:id="@+id/radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/navy_blue"
-                            android:background="@null"
-                            android:text=""
-                            android:layout_margin="4dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Card 3 with RadioButton -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/radio3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="20dp"
-                    android:background="@drawable/card_info_backgroud"
-                    android:layout_marginBottom="8dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="@color/grey"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Banque Misr"
-                            android:layout_weight="1"
-                            android:textSize="16sp"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="bold"
-                            android:paddingEnd="8dp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/bank_three_image"
-                            android:layout_marginEnd="8dp"/>
-
-                        <RadioButton
-                            android:id="@+id/radioButton3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/navy_blue"
-                            android:background="@null"
-                            android:layout_margin="4dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
+                        android:buttonTint="@color/navy_blue"/>
+                </LinearLayout>
             </RadioGroup>
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/cardsAnimationr"
+            <FrameLayout
+                android:id="@+id/cardSwitcher"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:lottie_rawRes="@raw/cards_animation"
-                android:adjustViewBounds="true"
-                app:lottie_autoPlay="false"
-                app:lottie_loop="false"/>
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp">
 
-            <!-- Withdraw Button -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/AddCard"
                 android:layout_width="match_parent"
@@ -242,6 +130,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:layout_marginTop="20dp"
                 app:backgroundTint="@null" />
         </LinearLayout>
     </FrameLayout>

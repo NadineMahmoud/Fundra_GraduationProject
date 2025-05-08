@@ -114,6 +114,7 @@
     <string name="masr_el_n_kheir">Masr El\n Kheir</string>
     <string name="_57357_nhospital">57357\nHospital</string>
     <string name="categories">Categories</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
     <string-array name="Donation">
         <item>All</item>
         <item>Zakat al-Mal</item>

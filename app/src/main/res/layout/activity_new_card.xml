@@ -81,9 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:boxStrokeColor="@color/black"
-                app:textColorHint="#80000000"
-                app:hintTextColor="#80000000"
-                android:textColorHint="#80000000">
+                android:textColorHint="@color/black_transparent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/cardholderTX"
@@ -92,7 +90,7 @@
                     android:background="@drawable/balance_box"
                     android:fontFamily="sans-serif"
                     android:hint="Cardholder name"
-                    app:textColorHint="#80000000"
+                    android:textColorHint="@color/black_transparent"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,9 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:boxStrokeColor="#80000000"
-                app:textColorHint="#80000000"
-                app:hintTextColor="#80000000"
-                android:textColorHint="#80000000">
+                android:textColorHint="@color/black_transparent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/card_numberTX"
@@ -132,9 +128,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:boxStrokeColor="@color/black"
-                    app:textColorHint="#80000000"
                     app:hintTextColor="#80000000"
-                    android:textColorHint="#80000000">
+                    android:textColorHint="@color/black_transparent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/expireTX"
@@ -159,9 +154,8 @@
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
                     app:boxStrokeColor="@color/black"
-                    app:textColorHint="#80000000"
                     app:hintTextColor="#80000000"
-                    android:textColorHint="#80000000">
+                    android:textColorHint="@color/black_transparent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/cvvTX"

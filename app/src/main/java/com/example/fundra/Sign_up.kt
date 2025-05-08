@@ -11,6 +11,8 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 
 class Sign_up : AppCompatActivity() {
@@ -35,6 +37,16 @@ class Sign_up : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
         binding.classificationDrop.setAdapter(adapter)
+
+        binding.classificationDrop.setOnItemClickListener { parent, view, position, id ->
+            val selected = parent.getItemAtPosition(position).toString()
+            Toast.makeText(this@Sign_up, "Cause Selected: $selected", Toast.LENGTH_SHORT).show()
+
+            if (selected == "Investor" || selected == "Both") {
+                val intent = Intent(this@Sign_up, Business_Owner_Activity::class.java)
+                startActivity(intent)
+            }
+        }
 
 
         binding.signUpBtn.setOnClickListener {
@@ -64,7 +76,7 @@ class Sign_up : AppCompatActivity() {
                                         val userData = hashMapOf(
                                             "name" to name,
                                             "email" to email,
-                                            "balance" to 0.0 // ✅ إضافة الرصيد الافتراضي
+                                            "balance" to 0.0
                                         )
                                         database.child(userID).setValue(userData)
                                             .addOnSuccessListener {
