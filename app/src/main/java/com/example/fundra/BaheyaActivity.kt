@@ -31,9 +31,9 @@ class BaheyaActivity : AppCompatActivity() {
         val items =
             listOf("Donation Cause","All", "Zakat al-Mal", "Patient Sponsorship", "Chemotherapy Sponsorship", "Special causes")
 
-        val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
-        adapter2.setDropDownViewResource(android.R.layout.simple_list_item_1)
-        binding.spinner.adapter = adapter2
+        val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, items)
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinner.setAdapter(adapter2)
 
         binding.backButton.setOnClickListener {
             val intent = Intent(this, DonationActivity::class.java)

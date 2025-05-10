@@ -211,6 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Choose"
+                        android:maxLines="1"
                         android:padding="12dp"
                         android:background="@color/transparent_black"
                         android:textColorHint="@color/white"
@@ -264,7 +265,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Choose"
+                    android:hint="@string/choose"
                     app:endIconMode="dropdown_menu"
                     app:endIconTintMode="src_in"
                     android:layout_marginTop="17dp"
@@ -276,7 +277,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:hint="Choose"
+                        android:hint="@string/choose"
+                        android:maxLines="1"
                         android:padding="12dp"
                         android:background="@color/transparent_black"
                         android:textColorHint="@color/white"
@@ -392,16 +394,37 @@
                 android:textSize="12sp" />
         </FrameLayout>
 
-        <CheckBox
-            android:id="@+id/checkbox"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:buttonTint="@color/black1"
             android:fontFamily="@font/open_sans_bold"
             android:textColor="@color/black1"
-            android:text="@string/i_agree_to_the_processing_of_personal_data"
+            android:text=""
             android:layout_marginTop="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textSize="15sp"
+                android:layout_marginTop="13dp"
+                android:text="I agree to the processing of "/>
+            <TextView
+                android:id="@+id/Privacy_Policies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Privacy Policies"
+                android:textColor="@color/navy_blue"/>
+        </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_up_btn"
@@ -466,6 +489,7 @@
                 android:text="@string/already_have_an_account"
                 android:textColor="@color/grey1"
                 android:textStyle="bold"
+                android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
                 android:textSize="20sp"/>
 
@@ -475,6 +499,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sign_in"
                 android:textSize="20sp"
+                android:layout_marginBottom="10dp"
                 android:textColor="@color/navy_blue"
                 android:textStyle="bold"/>
         </LinearLayout>

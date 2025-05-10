@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Privacy_Polices_Activity">
+
+    <FrameLayout
+        android:id="@+id/sign_up_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/frame"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+    <TextView
+        android:id="@+id/wellcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/privacy_policies"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/legal_disclaimerthis_application_has_been_developed_as_a_platform_for_revenue_based_funding_donation_based_and_rewards_based_crowdfunding_only_we_do_not_provide_any_services_related_to_equity_financing_loans_or_direct_financial_investments_all_campaigns_displayed_on_the_platform_are_the_responsibility_of_their_owners_and_users_are_advised_to_verify_the_credibility_of_the_project_before_contributing_we_comply_with_all_applicable_laws_and_regulations_and_we_do_not_bear_any_legal_responsibility_for_the_misuse_of_the_platform_by_external_parties_by_using_the_platform_you_agree_to_our_terms_and_conditions_and_privacy_policy"
+            android:textColor="@color/black1"
+            android:textSize="16sp"
+            android:fontFamily="@font/open_sans_semibold"/>
+
+        <Button
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/black1"
+            android:text="@string/accept"
+            android:fontFamily="@font/open_sans_bold"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:background="@drawable/sign_btn"/>
+
+        <Button
+            android:id="@+id/reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/sign_btn"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="Reject"
+            android:textColor="@color/white"
+            android:layout_marginTop="-50dp"
+            app:backgroundTint="@color/black1" />
+    </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

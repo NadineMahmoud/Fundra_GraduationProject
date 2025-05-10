@@ -6,8 +6,11 @@ import android.util.Log
 import android.view.View.OnFocusChangeListener
 import android.view.View.OnTouchListener
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.databinding.ActivitySignInBinding
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -19,6 +22,7 @@ class Sign_in : AppCompatActivity() {
     private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -26,21 +30,38 @@ class Sign_in : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
 
+        val passwordET = findViewById<TextInputEditText>(R.id.passwordET)
+        val passwordLayout = findViewById<TextInputLayout>(R.id.passwordLayout)
+
+        passwordET.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                passwordLayout.hint = ""
+            } else {
+                passwordLayout.hint = "Enter Your Password"
+            }
+        }
+
+
         binding.signUPText.setOnClickListener {
             val intent = Intent(this, Sign_up::class.java)
             startActivity(intent)
             finish()
         }
-        binding.passwordET.setOnTouchListener { _, _ ->
-            binding.passwordET.hint = ""
-            false
-        }
 
-        binding.passwordET.setOnFocusChangeListener { _, hasFocus ->
-            if (!hasFocus && binding.passwordET.text.isNullOrEmpty()) {
-                binding.passwordET.hint = "Enter Your Password"
+        val emailEditText = findViewById<TextInputEditText>(R.id.emailET)
+        val emailLayout = findViewById<TextInputLayout>(R.id.emailLayout)
+
+        emailEditText.setOnTouchListener(OnTouchListener { v, event ->
+            emailEditText.setHint("")
+            false
+        })
+
+        emailEditText.setOnFocusChangeListener(OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                emailEditText.setHint("Hint")
             }
-        }
+        })
+
 
 
         binding.forgetPassword.setOnClickListener {

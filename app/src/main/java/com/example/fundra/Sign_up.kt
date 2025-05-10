@@ -14,13 +14,16 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.activity.enableEdgeToEdge
 
 class Sign_up : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var database: DatabaseReference
+    private var selectedRole: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -38,23 +41,18 @@ class Sign_up : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
         binding.classificationDrop.setAdapter(adapter)
 
-        binding.classificationDrop.setOnItemClickListener { parent, view, position, id ->
-            val selected = parent.getItemAtPosition(position).toString()
-            Toast.makeText(this@Sign_up, "Cause Selected: $selected", Toast.LENGTH_SHORT).show()
-
-            if (selected == "Investor" || selected == "Both") {
-                val intent = Intent(this@Sign_up, Business_Owner_Activity::class.java)
-                startActivity(intent)
-            }
+        // ✅ بدل التوجيه المباشر، خزني القيمة بس
+        binding.classificationDrop.setOnItemClickListener { parent, _, position, _ ->
+            selectedRole = parent.getItemAtPosition(position).toString()
+            Toast.makeText(this@Sign_up, "Role Selected: $selectedRole", Toast.LENGTH_SHORT).show()
         }
-
 
         binding.signUpBtn.setOnClickListener {
             val name = binding.namelET.text.toString().trim()
             val email = binding.emailET.text.toString().trim()
             val password = binding.passwordET.text.toString().trim()
 
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || selectedRole.isEmpty()) {
                 Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -71,27 +69,36 @@ class Sign_up : AppCompatActivity() {
 
                         user?.updateProfile(profileUpdates)
                             ?.addOnCompleteListener { updateTask ->
-                                if (updateTask.isSuccessful) {
-                                    if (userID != null) {
-                                        val userData = hashMapOf(
-                                            "name" to name,
-                                            "email" to email,
-                                            "balance" to 0.0
-                                        )
-                                        database.child(userID).setValue(userData)
-                                            .addOnSuccessListener {
-                                                Log.d("FirebaseDebug", "User data saved successfully!")
-                                                Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
+                                if (updateTask.isSuccessful && userID != null) {
+                                    val userData = hashMapOf(
+                                        "name" to name,
+                                        "email" to email,
+                                        "role" to selectedRole,
+                                        "balance" to 0.0
+                                    )
+                                    database.child(userID).setValue(userData)
+                                        .addOnSuccessListener {
+                                            Log.d("FirebaseDebug", "User data saved successfully!")
+                                            Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
 
+                                            // ✅ التوجيه حسب النوع المختار
+                                            if (selectedRole == "Project Owner" || selectedRole == "Both") {
+                                                val intent = Intent(this, Business_Owner_Activity::class.java)
+                                                intent.putExtra("name", name)
+                                                intent.putExtra("email", email)
+                                                intent.putExtra("password", password)
+                                                startActivity(intent)
+                                            } else {
                                                 val intent = Intent(this, Home::class.java)
                                                 intent.putExtra("userName", name)
                                                 startActivity(intent)
-                                                finish()
                                             }
-                                            .addOnFailureListener {
-                                                Toast.makeText(this, "Failed to save user data", Toast.LENGTH_SHORT).show()
-                                            }
-                                    }
+
+                                            finish()
+                                        }
+                                        .addOnFailureListener {
+                                            Toast.makeText(this, "Failed to save user data", Toast.LENGTH_SHORT).show()
+                                        }
                                 } else {
                                     Toast.makeText(this, "Failed to update profile", Toast.LENGTH_SHORT).show()
                                 }

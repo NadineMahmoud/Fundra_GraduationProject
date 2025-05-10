@@ -4,13 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.fundra.databinding.ActivitySortingBottomSheetDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-class Sorting_BottomSheet_Dialog : BottomSheetDialogFragment() {
+class Sorting_BottomSheet_Dialog_activity : BottomSheetDialogFragment() {
 
     private var _binding: ActivitySortingBottomSheetDialogBinding? = null
     private val binding get() = _binding!!
@@ -28,7 +24,6 @@ class Sorting_BottomSheet_Dialog : BottomSheetDialogFragment() {
             dismiss()
         }
 
-        // تحديد الأنواع المختلفة للفلتر
         binding.food.setOnClickListener {
             selectedType = "Food / Community development"
         }
@@ -48,7 +43,7 @@ class Sorting_BottomSheet_Dialog : BottomSheetDialogFragment() {
         // عند الضغط على الزر Apply في الـ BottomSheet، نرسل التغييرات
         binding.resultsBtn.setOnClickListener {
             filterListener?.onFilterSelected(selectedType)
-            deleteVisibilityListener?.onDeleteVisibilityChanged(true)  // إظهار زر delete عند تطبيق الفلتر
+            deleteVisibilityListener?.onDeleteVisibilityChanged(true)
             dismiss()
         }
 

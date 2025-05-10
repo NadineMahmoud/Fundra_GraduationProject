@@ -277,6 +277,7 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_menu"
         android:elevation="100dp"
+        app:itemRippleColor="@color/navy_blue"
         android:background="@drawable/menu_shape"
         app:itemIconTint="@color/bottom_nav_item_color"
         android:backgroundTint="@color/primary"

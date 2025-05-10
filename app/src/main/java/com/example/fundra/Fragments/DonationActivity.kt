@@ -7,8 +7,6 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.fundra.databinding.ActivityDonationBinding
-import com.example.fundra.databinding.ActivitySortingBottomSheetDialogBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class DonationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDonationBinding
@@ -30,7 +28,7 @@ class DonationActivity : AppCompatActivity() {
                 }
 
                 binding.filter.setOnClickListener {
-                    val bottomSheet = Sorting_BottomSheet_Dialog()
+                    val bottomSheet = Sorting_BottomSheet_Dialog_activity()
                     bottomSheet.filterListener = object : OnFilterSelectedListener {
                         override fun onFilterSelected(type: String) {
                             when (type) {

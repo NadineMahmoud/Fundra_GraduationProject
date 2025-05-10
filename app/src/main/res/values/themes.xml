@@ -1,25 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Base.Theme.Fundra" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Customize primary and other colors -->
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/navy_blue</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorOnBackground">@color/black</item>
     </style>
 
     <style name="Theme.Fundra" parent="Base.Theme.Fundra" />
 
-    <!-- Base application theme. -->
+    <!-- Base application theme for NavigationBar -->
     <style name="Base.Theme.NavigationBar" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/navy_blue</item>
         <item name="android:statusBarColor">@color/navy_blue</item>
         <item name="colorSecondary">@color/black1</item>
     </style>
+
+    <style name="Theme.NavigationBar" parent="Base.Theme.NavigationBar" />
 
     <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/black</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-
-    <style name="Theme.NavigationBar" parent="Base.Theme.NavigationBar" />
 </resources>

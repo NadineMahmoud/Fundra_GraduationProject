@@ -115,6 +115,13 @@
     <string name="_57357_nhospital">57357\nHospital</string>
     <string name="categories">Categories</string>
     <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="select_a_cause">Select a Cause</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter_an_amount_5_60000_egp">Enter an Amount (5-60000)EGP</string>
+    <string name="choose">Choose</string>
+    <string name="legal_disclaimerthis_application_has_been_developed_as_a_platform_for_revenue_based_funding_donation_based_and_rewards_based_crowdfunding_only_we_do_not_provide_any_services_related_to_equity_financing_loans_or_direct_financial_investments_all_campaigns_displayed_on_the_platform_are_the_responsibility_of_their_owners_and_users_are_advised_to_verify_the_credibility_of_the_project_before_contributing_we_comply_with_all_applicable_laws_and_regulations_and_we_do_not_bear_any_legal_responsibility_for_the_misuse_of_the_platform_by_external_parties_by_using_the_platform_you_agree_to_our_terms_and_conditions_and_privacy_policy">Legal DisclaimerThis application has been developed as a platform for Revenue based funding, donation-based and rewards-based crowdfunding only. We do not provide any services related to equity financing, loans, or direct financial investments. All campaigns displayed on the platform are the responsibility of their owners, and users are advised to verify the credibility of the project before contributing. We comply with all applicable laws and regulations, and we do not bear any legal responsibility for the misuse of the platform by external parties. By using the platform, you agree to our terms and conditions and privacy policy.</string>
+    <string name="accept">Accept</string>
+    <string name="privacy_policies">Privacy Policies</string>
     <string-array name="Donation">
         <item>All</item>
         <item>Zakat al-Mal</item>
