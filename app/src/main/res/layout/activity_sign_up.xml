@@ -17,10 +17,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/sign_up_frame" />
+        app:layout_constraintBottom_toTopOf="@id/vodafone_frame" />
 
     <FrameLayout
-        android:id="@+id/sign_up_frame"
+        android:id="@+id/vodafone_frame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/get_started"
+                android:text="Create Account"
                 android:textColor="@color/black1"
                 android:fontFamily="@font/open_sans_bold"
                 android:textStyle="bold"
@@ -85,9 +85,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:hint="Enter Full Name"
                     android:textColorHint="@drawable/text_color_hint"
                     app:endIconMode="clear_text"
+                    app:hintEnabled="false"
                     app:endIconTintMode="src_in"
                     app:hintTextColor="@drawable/text_color_hint">
 
@@ -97,6 +97,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/signupbox"
                         android:inputType="textPersonName"
+                        android:hint="Enter Full Name"
+                        android:paddingTop="25dp"
                         android:nextFocusDown="@+id/pass_reg"
                         android:imeOptions="actionNext"
                         android:textColor="@color/black1"
@@ -135,14 +137,16 @@
                     android:layout_marginTop="24dp"
                     app:endIconMode="clear_text"
                     app:endIconTintMode="src_in"
-                    android:hint="Enter Your Email"
-                    app:hintTextColor="@drawable/text_color_hint"
-                    android:textColorHint="@drawable/text_color_hint">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/emailET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:hint="Enter Your Email"
+                        android:paddingTop="25dp"
+                        app:hintTextColor="@drawable/text_color_hint"
+                        android:textColorHint="@drawable/text_color_hint"
                         android:background="@drawable/signupbox"
                         android:inputType="textEmailAddress"
                         android:fontFamily="@font/open_sans_bold"/>
@@ -179,9 +183,7 @@
                     android:layout_marginTop="24dp"
                     app:endIconMode="clear_text"
                     app:endIconTintMode="src_in"
-                    android:hint="@string/enter_your_phone_number"
-                    app:hintTextColor="@drawable/text_color_hint"
-                    android:textColorHint="@drawable/text_color_hint">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/phoneET"
@@ -189,6 +191,9 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/signupbox"
                         android:inputType="phone"
+                        android:hint="@string/enter_your_phone_number"
+                        app:hintTextColor="@drawable/text_color_hint"
+                        android:textColorHint="@drawable/text_color_hint"
                         android:fontFamily="@font/open_sans_bold"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -225,9 +230,7 @@
                     android:layout_marginTop="15dp"
                     app:endIconTintMode="src_in"
                     android:layout_weight="1"
-                    android:hint="Enter Your Password"
-                    app:hintTextColor="@android:color/white"
-                    android:textColorHint="@android:color/white"
+                    app:hintEnabled="false"
                     app:endIconMode="password_toggle">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -237,7 +240,10 @@
                         android:background="@drawable/signupbox"
                         android:fontFamily="@font/open_sans_bold"
                         android:inputType="textPassword"
-                        android:textColorHint="@drawable/text_color_hint" />
+                        android:paddingTop="23dp"
+                        android:hint="Enter Your Password"
+                        app:hintTextColor="@android:color/white"
+                        android:textColorHint="@android:color/white"/>
                 </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/classificationLayout"
@@ -245,10 +251,12 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:endIconMode="dropdown_menu"
-                        android:layout_marginTop="19dp"
+                        android:layout_marginTop="18dp"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/signupbox"
-                        app:endIconTintMode="src_in">
+                        app:endIconTintMode="src_in"
+                        app:hintTextColor="@android:color/white"
+                        android:textColorHint="@android:color/white">
 
                     <AutoCompleteTextView
                         android:id="@+id/classification_drop"
@@ -257,11 +265,14 @@
                         app:endIconTintMode="src_in"
                         android:layout_weight="1"
                         android:layout_marginStart="10dp"
-                        android:padding="12dp"
+                        android:padding="15dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:hint="Choose"
                         android:background="@color/transparent_black"
-                        android:textColorHint="@color/white"
                         android:textColor="@color/white"
-                        android:inputType="none"/>
+                        android:inputType="none"
+                        app:hintTextColor="@android:color/white"
+                        android:textColorHint="@android:color/white"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
                 <TextView

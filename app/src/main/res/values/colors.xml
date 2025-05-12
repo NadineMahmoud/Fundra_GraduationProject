@@ -7,6 +7,7 @@
     <color name="grey">#E9E9E9</color>
     <color name="card_border">#353535</color>
     <color name="navy_blue">#24C6E4</color>
+    <color name="transparent_blue">#1A24C6E4</color>
     <color name="primary">#FFFFFF</color>
     <color name="darkGray">#092F37</color>
     <color name="grey1">#B2B2B2</color>
@@ -19,4 +20,5 @@
     <color name="hint">#99353535</color>
     <color name="date">#AFAFAF</color>
     <color name="card_case">#EAEAEA</color>
+    <color name="card_bg">#33D9D933</color>
 </resources>

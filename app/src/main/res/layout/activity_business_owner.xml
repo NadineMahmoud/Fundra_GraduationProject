@@ -26,7 +26,7 @@
 
 
     <FrameLayout
-        android:id="@+id/sign_up_frame"
+        android:id="@+id/vodafone_frame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -86,21 +86,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                app:hintEnabled="false"
                 app:endIconMode="clear_text"
-                app:endIconTintMode="src_in"
-                android:hint="Enter Business Name"
-                app:hintTextColor="@android:color/white"
-                android:textColorHint="@android:color/white">
-
+                app:endIconTintMode="src_in">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/Business_NamelET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signupbox"
                     android:fontFamily="@font/open_sans_semibold"
-                    android:textSize="15sp"
-                    android:textColor="@color/white"
-                    android:inputType="text" />
+                    android:textSize="14sp"
+                    android:paddingTop="24dp"
+                    android:textColor="@color/black1"
+                    android:inputType="text"
+                    android:hint="Enter Business Name"
+                    android:textColorHint="@color/white"
+                    app:hintTextColor="@color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
         </FrameLayout>
 
@@ -133,7 +134,7 @@
                 android:layout_marginTop="15dp"
                 app:endIconMode="clear_text"
                 app:endIconTintMode="src_in"
-                android:hint="Describe Your Business"
+                app:hintEnabled="false"
                 app:hintTextColor="@android:color/white"
                 android:textColorHint="@android:color/white">
 
@@ -143,7 +144,11 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/signupbox"
                     android:fontFamily="@font/open_sans_semibold"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
+                    android:hint="Describe Your Business"
+                    android:textColorHint="@color/white"
+                    android:paddingTop="24dp"
+                    app:hintTextColor="@color/white"
                     android:textColor="@color/white"
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -180,25 +185,26 @@
                     android:layout_marginTop="15dp"
                     app:endIconTintMode="src_in"
                     android:layout_weight="1"
-                    android:hint="Business Field"
-                    app:hintTextColor="@android:color/white"
-                    android:textColorHint="@android:color/white">
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/Business_CategoryET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/signupbox"
-                        android:fontFamily="sans-serif"
+                        android:fontFamily="@font/open_sans_semibold"
                         android:inputType="textLongMessage"
-                        android:textColorHint="@color/white" />
+                        android:hint="Business Field"
+                        android:paddingTop="23dp"
+                        app:hintTextColor="@android:color/white"
+                        android:textColorHint="@android:color/white"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/Current_StageLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginTop="17dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginStart="10dp"
                     app:endIconMode="dropdown_menu"
                     android:background="@drawable/signupbox"
@@ -212,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Choose"
                         android:maxLines="1"
-                        android:padding="12dp"
+                        android:padding="15dp"
                         android:background="@color/transparent_black"
                         android:textColorHint="@color/white"
                         android:textColor="@color/black1"
@@ -279,7 +285,7 @@
                         android:fontFamily="sans-serif"
                         android:hint="@string/choose"
                         android:maxLines="1"
-                        android:padding="12dp"
+                        android:padding="15dp"
                         android:background="@color/transparent_black"
                         android:textColorHint="@color/white"
                         android:textColor="@color/white"
@@ -294,20 +300,22 @@
                     android:layout_weight="1"
                     android:layout_marginTop="15dp"
                     app:endIconTintMode="src_in"
-                    android:hint="Business Field"
-                    app:hintTextColor="@android:color/white"
-                    android:textColorHint="@android:color/white">
+                    app:hintEnabled="false"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/Team_Members_drop"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:paddingTop="22dp"
                         android:background="@drawable/signupbox"
                         android:fontFamily="@font/open_sans_bold"
                         android:inputType="textMultiLine"
                         android:textColor="@color/black1"
-                        android:textColorHint="@color/white"/>
+                        android:hint="Business Field"
+                        app:hintTextColor="@android:color/white"
+                        android:textColorHint="@android:color/white"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -338,17 +346,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="55dp"
+                    android:layout_height="63dp"
                     android:layout_weight="1"
                     android:text="Upload Business Plan"
                     android:drawableEnd="@drawable/upload"
                     android:paddingStart="7dp"
-                    android:layout_marginTop="5dp"
                     android:textSize="10sp"
                     android:textColor="@color/black1"
                     android:drawableTintMode="src_over"
@@ -360,9 +366,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
-                    android:hint="Attach Here"
+                    app:hintEnabled="false"
                     android:inputType="textLongMessage"
-                    android:textColorHint="@color/white"
                     android:layout_weight="1">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -372,6 +377,9 @@
                         android:background="@drawable/signupbox"
                         android:fontFamily="@font/open_sans_semibold"
                         android:inputType="textPassword"
+                        app:textColorHint="@color/white"
+                        android:paddingTop="22dp"
+                        android:hint="Attach Here"
                         android:textColorHint="@color/white" />
                 </com.google.android.material.textfield.TextInputLayout>
 

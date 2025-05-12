@@ -40,12 +40,12 @@ class Sorting_BottomSheet_Dialog_activity : BottomSheetDialogFragment() {
             selectedType = "All"
         }
 
-        // عند الضغط على الزر Apply في الـ BottomSheet، نرسل التغييرات
         binding.resultsBtn.setOnClickListener {
             filterListener?.onFilterSelected(selectedType)
             deleteVisibilityListener?.onDeleteVisibilityChanged(true)
             dismiss()
         }
+
 
         return binding.root
     }

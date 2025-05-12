@@ -8,6 +8,7 @@ import android.view.View.OnTouchListener
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import com.example.fundra.databinding.ActivitySignInBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -47,23 +48,13 @@ class Sign_in : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        val emailEditText = findViewById<TextInputEditText>(R.id.emailET)
-        val emailLayout = findViewById<TextInputLayout>(R.id.emailLayout)
-
-        emailEditText.setOnTouchListener(OnTouchListener { v, event ->
-            emailEditText.setHint("")
-            false
-        })
-
-        emailEditText.setOnFocusChangeListener(OnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus) {
-                emailEditText.setHint("Hint")
+        passwordET.doOnTextChanged { text, start, before, count ->
+            if (text.isNullOrEmpty()) {
+                passwordLayout.hint = "Enter your password"
+            } else {
+                passwordLayout.hint = null
             }
-        })
-
-
-
+        }
         binding.forgetPassword.setOnClickListener {
             val intent = Intent(this, ForgetPass::class.java)
             startActivity(intent)

@@ -111,7 +111,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/donation_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                <ImageView
                     android:id="@+id/baheya"
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/open_sans_regular"
-                    android:text="Magdi\nyacoub"
+                    android:text="@string/magdi_nyacoub"
                     android:textAlignment="center"
                     android:textColor="@color/black_donation"
                     android:textSize="13sp"
@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/open_sans_regular"
-                    android:text="AlNas\nHospital"
+                    android:text="@string/alnas_nhospital"
                     android:textAlignment="center"
                     android:textColor="@color/black_donation"
                     android:textSize="13sp"

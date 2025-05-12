@@ -18,7 +18,13 @@
         android:theme="@style/Theme.Fundra"
         tools:targetApi="31">
         <activity
-            android:name=".Privacy_Polices_Activity"
+            android:name=".vodafon_addMony_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".InstaPayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vodafone_Activity_receipt"
             android:exported="false" />
         <activity
             android:name=".Business_Owner_Activity"

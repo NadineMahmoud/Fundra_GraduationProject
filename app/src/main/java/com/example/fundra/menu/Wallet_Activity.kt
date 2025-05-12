@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.Home
+import com.example.fundra.Payment_Methods_Activity
 import com.example.fundra.R
 import com.example.fundra.WithdrawlActivity
 import com.example.fundra.balance.AddMoneyActivity
@@ -49,7 +50,7 @@ class Wallet_Activity : AppCompatActivity() {
         }
 
         binding.add.setOnClickListener {
-            startActivity(Intent(this, AddMoneyActivity::class.java))
+            Payment_Methods_Activity().show(supportFragmentManager, "PaymentMethods")
         }
         binding.with.setOnClickListener {
             startActivity(Intent(this, WithdrawlActivity::class.java))
