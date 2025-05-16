@@ -1,4 +1,4 @@
-package com.example.fundra
+package com.example.fundra.balance
 
 import android.content.Intent
 import android.os.Bundle

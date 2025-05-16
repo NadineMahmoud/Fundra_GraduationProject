@@ -6,7 +6,7 @@
     android:background="@drawable/main_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Special_CausesActivity">
+    tools:context=".donation.Special_CausesActivity">
 
     <ImageButton
         android:id="@+id/backButton"

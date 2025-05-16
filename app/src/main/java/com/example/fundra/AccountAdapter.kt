@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fundra.AccountItem
+import com.example.fundra.menu.AccountItem
 import com.example.fundra.R
 
 class AccountAdapter(

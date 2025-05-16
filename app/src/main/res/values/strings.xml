@@ -124,6 +124,31 @@
     <string name="privacy_policies">Privacy Policies</string>
     <string name="magdi_nyacoub">Magdi\nyacoub</string>
     <string name="alnas_nhospital">AlNas\nHospital</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="coins">coins</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="phone">Phone</string>
+    <string name="classification">Classification</string>
+    <string name="reject">Reject</string>
+    <string name="please_enter_your_email_and_we_will_send_an_otp_code_in_the_next_step_to_reset_your_password">Please enter your email and we will send an OTP code in the next step to reset your password</string>
+    <string name="send_link">Send Link</string>
+    <string name="settings">settings</string>
+    <string name="reset_your_password">Reset Your Password</string>
+    <string name="otp">otp</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="didn_t_receive_a_code">Didn\'t receive a code?</string>
+    <string name="you_can_resend_code_in_50s">You can resend code in 50s</string>
+    <string name="create_new_password_if_you_forget_it_then_you_have_to_do_forgot_password">Create new password. if you forget it, then you have to do forgot password</string>
+    <string name="create_new_password">Create New Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="udemy">Udemy</string>
     <string-array name="Donation">
         <item>All</item>
         <item>Zakat al-Mal</item>

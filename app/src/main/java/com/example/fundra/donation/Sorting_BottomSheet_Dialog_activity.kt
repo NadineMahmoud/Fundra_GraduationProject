@@ -1,9 +1,10 @@
-package com.example.fundra
+package com.example.fundra.donation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.fundra.DonationActivity
 import com.example.fundra.databinding.ActivitySortingBottomSheetDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class Sorting_BottomSheet_Dialog_activity : BottomSheetDialogFragment() {

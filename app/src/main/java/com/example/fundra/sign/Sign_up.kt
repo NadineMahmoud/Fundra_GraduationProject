@@ -1,4 +1,4 @@
-package com.example.fundra
+package com.example.fundra.sign
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,10 +11,9 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
+import com.example.fundra.Home
 
 class Sign_up : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
@@ -41,7 +40,6 @@ class Sign_up : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
         binding.classificationDrop.setAdapter(adapter)
 
-        // ✅ بدل التوجيه المباشر، خزني القيمة بس
         binding.classificationDrop.setOnItemClickListener { parent, _, position, _ ->
             selectedRole = parent.getItemAtPosition(position).toString()
             Toast.makeText(this@Sign_up, "Role Selected: $selectedRole", Toast.LENGTH_SHORT).show()
@@ -74,7 +72,8 @@ class Sign_up : AppCompatActivity() {
                                         "name" to name,
                                         "email" to email,
                                         "role" to selectedRole,
-                                        "balance" to 0.0
+                                        "balance" to 0.0,
+                                        "points" to 0
                                     )
                                     database.child(userID).setValue(userData)
                                         .addOnSuccessListener {

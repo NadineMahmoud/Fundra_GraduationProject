@@ -23,6 +23,34 @@
             app:layout_constraintBottom_toTopOf="@id/search"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/points_card"
+        android:layout_width="93dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="57dp"
+        android:elevation="0dp"
+        app:cardCornerRadius="50dp"
+        app:strokeColor="@color/transparent_black"
+        android:backgroundTint="#32092F37"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/notification"
+        android:background="#80092F37">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/stars"
+            android:background="@drawable/back_btn"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1902"
+            android:fontFamily="@font/open_sans_semibold"
+            android:layout_marginEnd="10dp"
+            android:textColor="#CC092F37"
+            android:layout_gravity="end|center"/>
+    </com.google.android.material.card.MaterialCardView>
 
         <!-- Welcome Text -->
         <TextView

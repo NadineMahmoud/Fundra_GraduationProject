@@ -1,11 +1,8 @@
-package com.example.fundra
+package com.example.fundra.sign
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.fundra.databinding.ActivityResetNewPasswordBinding
 
 class ResetNewPassword : AppCompatActivity() {

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vodafon_addMony_Activity"
+    tools:context=".balance.vodafon_addMony_Activity"
     android:background="@drawable/main_bg">
     <TextView
         android:id="@+id/vodafone_tx"

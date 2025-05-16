@@ -1,19 +1,13 @@
-package com.example.fundra
+package com.example.fundra.balance
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.fundra.Sorting_BottomSheet_Dialog_activity.DeleteVisibilityListener
-import com.example.fundra.balance.AddMoneyActivity
+import com.example.fundra.InstaPayActivity
 import com.example.fundra.databinding.ActivityPaymentMethodsBinding
-import com.example.fundra.databinding.ActivitySortingBottomSheetDialogBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.example.fundra.vodafone_Activity_receipt
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class Payment_Methods_Activity : BottomSheetDialogFragment() {

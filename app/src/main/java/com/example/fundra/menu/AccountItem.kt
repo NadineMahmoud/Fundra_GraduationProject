@@ -1,4 +1,4 @@
-package com.example.fundra
+package com.example.fundra.menu
 
 data class AccountItem(
     val icon: Int,

@@ -5,12 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Privacy_Polices_Activity">
+    tools:context=".sign.Privacy_Polices_Activity">
 
     <FrameLayout
         android:id="@+id/vodafone_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/frame"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,25 +46,25 @@
             android:id="@+id/accept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/black1"
+            app:backgroundTint="@null"
             android:text="@string/accept"
             android:fontFamily="@font/open_sans_bold"
             android:layout_marginTop="15dp"
             android:layout_gravity="start"
             android:textColor="@color/white"
-            android:background="@drawable/sign_btn"/>
+            android:background="@drawable/polices_color"/>
 
         <Button
             android:id="@+id/reject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:background="@drawable/sign_btn"
+            android:background="@drawable/polices_color"
             android:fontFamily="@font/open_sans_bold"
-            android:text="Reject"
+            android:text="@string/reject"
             android:textColor="@color/white"
             android:layout_marginTop="-50dp"
-            app:backgroundTint="@color/black1" />
+            app:backgroundTint="@null" />
     </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

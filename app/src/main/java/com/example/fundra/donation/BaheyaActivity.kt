@@ -1,4 +1,4 @@
-package com.example.fundra
+package com.example.fundra.donation
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fundra.DonationActivity
+import com.example.fundra.R
 import com.example.fundra.databinding.ActivityBaheyaBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase

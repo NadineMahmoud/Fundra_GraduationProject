@@ -5,8 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fundra.R
-import com.example.fundra.Sign_up
+import com.example.fundra.sign.Sign_in
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,33 +1,29 @@
-package com.example.fundra
+package com.example.fundra.sign
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View.OnFocusChangeListener
-import android.view.View.OnTouchListener
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
+import com.example.fundra.Home
+import com.example.fundra.R
 import com.example.fundra.databinding.ActivitySignInBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-
-
 class Sign_in : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var database: DatabaseReference
-
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
 
@@ -41,8 +37,6 @@ class Sign_in : AppCompatActivity() {
                 passwordLayout.hint = "Enter Your Password"
             }
         }
-
-
         binding.signUPText.setOnClickListener {
             val intent = Intent(this, Sign_up::class.java)
             startActivity(intent)

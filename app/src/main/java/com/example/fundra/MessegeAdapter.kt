@@ -6,42 +6,34 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+data class ChatMessage(val message: String, val isUser: Boolean)
+class MessageAdapter(private val messages: List<ChatMessage>) :
+    RecyclerView.Adapter<MessageAdapter.ChatViewHolder>() {
 
-data class Message(val message: String, val sentBy: String) {
-    companion object {
-        const val SENT_BY_ME = "me"
-        const val SENT_BY_BOT = "bot"
-    }
-}
-
-class MessageAdapter(var messageList: MutableList<Message>) :
-    RecyclerView.Adapter<MessageAdapter.MesgViewHolder>() {
-
-    inner class MesgViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val leftChatView: LinearLayout = v.findViewById(R.id.left_chat_view)
-        val leftTextView: TextView = v.findViewById(R.id.left_chat_text_view)
-        val rightChatView: LinearLayout = v.findViewById(R.id.right_chat_view)
-        val rightTextView: TextView = v.findViewById(R.id.right_chat_text_view)
+    inner class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val leftLayout: LinearLayout = itemView.findViewById(R.id.left_chat_view)
+        val rightLayout: LinearLayout = itemView.findViewById(R.id.right_chat_view)
+        val leftText: TextView = itemView.findViewById(R.id.left_chat_text_view)
+        val rightText: TextView = itemView.findViewById(R.id.right_chat_text_view)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MesgViewHolder {
-        val chatView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.chat_item, parent, false)
-        return MesgViewHolder(chatView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.chat_item, parent, false)
+        return ChatViewHolder(view)
     }
 
-    override fun getItemCount(): Int = messageList.size
-
-    override fun onBindViewHolder(holder: MesgViewHolder, position: Int) {
-        val message = messageList[position]
-        if (message.sentBy == Message.SENT_BY_ME) {
-            holder.leftChatView.visibility = View.GONE
-            holder.rightChatView.visibility = View.VISIBLE
-            holder.rightTextView.text = message.message
+    override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
+        val message = messages[position]
+        if (message.isUser) {
+            holder.rightLayout.visibility = View.VISIBLE
+            holder.leftLayout.visibility = View.GONE
+            holder.rightText.text = message.message
         } else {
-            holder.leftChatView.visibility = View.VISIBLE
-            holder.rightChatView.visibility = View.GONE
-            holder.leftTextView.text = message.message
+            holder.leftLayout.visibility = View.VISIBLE
+            holder.rightLayout.visibility = View.GONE
+            holder.leftText.text = message.message
         }
     }
+
+    override fun getItemCount(): Int = messages.size
 }

@@ -6,32 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context=".OTP">
-
+    tools:context=".sign.OTP">
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="back"
+        android:contentDescription="@string/Back"
         android:src="@drawable/back"
         android:background="@drawable/back_btn"
         android:padding="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="otp"
+        android:contentDescription="@string/otp"
         android:src="@drawable/reset"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="70dp"/>
-
     <FrameLayout
         android:id="@+id/sign_in_frame"
         android:layout_width="match_parent"
@@ -41,7 +38,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -49,13 +45,12 @@
             android:background="@drawable/frame"
             android:padding="20dp"
             android:gravity="center_horizontal">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/otp_code_verification"
-                android:fontFamily="sans-serif"
-                android:textStyle="bold"
+                android:textColor="@color/black1"
+                android:fontFamily="@font/open_sans_bold"
                 android:textSize="30sp" />
 <LinearLayout
     android:layout_width="wrap_content"
@@ -67,30 +62,29 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginEnd="10dp"
-               android:contentDescription="1"
+               android:contentDescription="@string/_1"
                android:src="@drawable/otp" />
     <ImageView
         android:id="@+id/otp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:contentDescription="2"
+        android:contentDescription="@string/_2"
         android:src="@drawable/otp"/>
     <ImageView
         android:id="@+id/otp3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:contentDescription="3"
+        android:contentDescription="@string/_3"
         android:src="@drawable/otp"/>
     <ImageView
         android:id="@+id/otp4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:contentDescription="4"
+        android:contentDescription="@string/_4"
         android:src="@drawable/otp"/>
-
     <EditText
         android:id="@+id/hiddenOtpEditText"
         android:layout_width="1dp"
@@ -98,15 +92,15 @@
         android:inputType="number"
         android:maxLength="4"
         android:visibility="invisible"/>
-
 </LinearLayout>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textSize="20sp"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/we_have_send_an_otp_code_to_your_email_enter_the_otp_code_below_to_verify"/>
+                android:textSize="17sp"
+                android:textColor="@color/black1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/please_enter_your_email_and_we_will_send_an_otp_code_in_the_next_step_to_reset_your_password"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -116,19 +110,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:layout_marginStart="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Didn't receive a code?"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@string/didn_t_receive_a_code"
                 android:textColor="@color/grey1"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:textSize="17sp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="You can resend code in 50s"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/you_can_resend_code_in_50s"
                     android:textColor="@color/grey1"/>
 </LinearLayout>
 
@@ -137,14 +130,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:textColor="@color/black"
-                android:textFontWeight="600"
+                android:textColor="@color/black1"
                 android:textSize="20sp"
                 android:text="Continue"
                 app:cornerRadius="100dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/open_sans_bold"
                 android:background="@drawable/sign_btn"
                 app:backgroundTint="@null"/>
         </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

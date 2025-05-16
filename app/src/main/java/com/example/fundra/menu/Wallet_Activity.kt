@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fundra.Home
-import com.example.fundra.Payment_Methods_Activity
+import com.example.fundra.balance.Payment_Methods_Activity
 import com.example.fundra.R
-import com.example.fundra.WithdrawlActivity
-import com.example.fundra.balance.AddMoneyActivity
+import com.example.fundra.balance.WithdrawlActivity
 import com.example.fundra.balance.CardsActivity
 import com.example.fundra.databinding.ActivityWalletBinding
 import com.google.firebase.auth.FirebaseAuth

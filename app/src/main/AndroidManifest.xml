@@ -18,7 +18,10 @@
         android:theme="@style/Theme.Fundra"
         tools:targetApi="31">
         <activity
-            android:name=".vodafon_addMony_Activity"
+            android:name=".PointsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".balance.vodafon_addMony_Activity"
             android:exported="false" />
         <activity
             android:name=".InstaPayActivity"
@@ -27,11 +30,11 @@
             android:name=".vodafone_Activity_receipt"
             android:exported="false" />
         <activity
-            android:name=".Business_Owner_Activity"
+            android:name=".sign.Business_Owner_Activity"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".Special_CausesActivity"
+            android:name=".donation.Special_CausesActivity"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
@@ -39,7 +42,7 @@
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".BaheyaActivity"
+            android:name=".donation.BaheyaActivity"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
@@ -67,7 +70,7 @@
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".WithdrawlActivity"
+            android:name=".balance.WithdrawlActivity"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
@@ -75,7 +78,7 @@
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".ResetNewPassword"
+            android:name=".sign.ResetNewPassword"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
@@ -99,11 +102,11 @@
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".OTP"
+            android:name=".sign.OTP"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".ForgetPass"
+            android:name=".sign.ForgetPass"
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
@@ -111,11 +114,11 @@
             android:exported="false"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".Sign_up"
+            android:name=".sign.Sign_up"
             android:exported="true"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
-            android:name=".Sign_in"
+            android:name=".sign.Sign_in"
             android:exported="true"
             android:theme="@style/Base.Theme.Fundra" />
         <activity
