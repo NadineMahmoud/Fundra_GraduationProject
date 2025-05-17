@@ -4,6 +4,7 @@
     <style name="Base.Theme.Fundra" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize primary and other colors -->
         <item name="colorPrimary">@color/navy_blue</item>
+        <item name="android:font">@font/open_sans_semibold</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/navy_blue</item>
         <item name="colorSurface">@color/white</item>

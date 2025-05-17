@@ -49,8 +49,9 @@ class Sign_up : AppCompatActivity() {
             val name = binding.namelET.text.toString().trim()
             val email = binding.emailET.text.toString().trim()
             val password = binding.passwordET.text.toString().trim()
+            val phone = binding.phoneET.text.toString().trim()
 
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || selectedRole.isEmpty()) {
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || selectedRole.isEmpty()|| phone.isEmpty()) {
                 Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -72,6 +73,8 @@ class Sign_up : AppCompatActivity() {
                                         "name" to name,
                                         "email" to email,
                                         "role" to selectedRole,
+                                        "password" to password,
+                                        "phone" to phone,
                                         "balance" to 0.0,
                                         "points" to 0
                                     )
@@ -80,7 +83,6 @@ class Sign_up : AppCompatActivity() {
                                             Log.d("FirebaseDebug", "User data saved successfully!")
                                             Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
 
-                                            // ✅ التوجيه حسب النوع المختار
                                             if (selectedRole == "Project Owner" || selectedRole == "Both") {
                                                 val intent = Intent(this, Business_Owner_Activity::class.java)
                                                 intent.putExtra("name", name)

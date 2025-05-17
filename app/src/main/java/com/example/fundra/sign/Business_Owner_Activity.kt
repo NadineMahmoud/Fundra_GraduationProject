@@ -15,6 +15,7 @@ import com.example.fundra.databinding.ActivityBusinessOwnerBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+
 class Business_Owner_Activity : AppCompatActivity() {
     private lateinit var binding: ActivityBusinessOwnerBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -48,10 +49,12 @@ class Business_Owner_Activity : AppCompatActivity() {
             val bottomSheet = Privacy_Polices_Activity()
             bottomSheet.show(supportFragmentManager, "PrivacySheet")
         }
+
         val uploadButton = findViewById<Button>(R.id.upload)
         uploadButton.setOnClickListener {
             openFileChooser()
         }
+
         binding.signUpBtn.setOnClickListener {
             val businessName = binding.BusinessNamelET.text.toString().trim()
             val businessDescription = binding.BusinessDescriptionET.text.toString().trim()
@@ -62,7 +65,8 @@ class Business_Owner_Activity : AppCompatActivity() {
             val socialMedia = binding.SocialMediaLinksET.text.toString().trim()
 
             if (businessName.isEmpty() || businessDescription.isEmpty() || businessCategory.isEmpty() || currentStage.isEmpty()
-                || investorReturnType.isEmpty() || teamMembers.isEmpty() || socialMedia.isEmpty()) {
+                || investorReturnType.isEmpty() || teamMembers.isEmpty() || socialMedia.isEmpty()
+            ) {
                 Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -92,9 +96,12 @@ class Business_Owner_Activity : AppCompatActivity() {
                     .addOnFailureListener {
                         Toast.makeText(this, "Failed to save business data", Toast.LENGTH_SHORT).show()
                     }
+            } else {
+                Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
     private fun openFileChooser() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "*/*"

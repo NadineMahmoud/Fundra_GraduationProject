@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@drawable/main_bg"
+    android:layout_height="match_parent"
+    tools:context=".InvestActivity">
+    <ImageView
+        android:id="@+id/companyimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/company_invest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <FrameLayout
+        android:id="@+id/vodafone_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        app:layout_constraintTop_toBottomOf="@id/companyimg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/frame"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fund with Fundra"
+            android:textColor="@color/black1"
+            android:textSize="32sp"
+            android:fontFamily="@font/open_sans_bold"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:id="@+id/amountlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/text_sign"
+                android:elevation="1dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Investment amount"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/amount_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColorHint="@drawable/text_color_hint"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:endIconTintMode="src_in"
+                app:hintTextColor="@drawable/text_color_hint">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/amountET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signupbox"
+                    android:inputType="textPersonName"
+                    android:hint="Enter your investment amount"
+                    android:paddingTop="23dp"
+                    android:nextFocusDown="@+id/pass_reg"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/black1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColorHint="@drawable/text_color_hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/signupbox"
+            android:fontFamily="@font/open_sans_bold"
+            android:lineSpacingExtra="1dp"
+            android:padding="10dp"
+            android:text="Note:\nExpected to receive 5% of the company’s \nrevenues until you get back 1.5x your investment.\n
+Actual returns depend on the company’s performance"
+            android:textColor="@color/black1"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay with"
+            android:textColor="@color/black1"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="start"
+            android:fontFamily="@font/open_sans_bold"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:tint = "@color/navy_blue"
+            android:layout_gravity="start"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/fizza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXXX-3328"
+                android:textColor="@color/black1"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/logos_mastercard"
+                android:textSize="15sp"
+                android:paddingHorizontal="5dp"
+                android:fontFamily="@font/open_sans_semibold"/>
+            <RadioButton
+                android:id="@+id/credit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Another Payment Method"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/fizza"
+                android:textSize="15sp"
+                android:layout_marginTop="-15dp"
+                android:textColor="@color/black1"
+                android:paddingHorizontal="5dp"
+                android:fontFamily="@font/open_sans_semibold"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textSize="13sp"
+                android:layout_marginStart="-10dp"
+                android:text="I agree to the processing of "/>
+            <TextView
+                android:id="@+id/Privacy_Policies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Terms and Conditions"
+                android:textColor="@color/navy_blue"/>
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/invest_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Invest Now"
+            app:cornerRadius="100dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:background="@drawable/sign_btn"
+            app:backgroundTint="@null"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            app:layout_constraintStart_toStartOf="@id/donation_container"
+            app:layout_constraintEnd_toEndOf="@id/donation_container"
+            app:layout_constraintBottom_toBottomOf="@id/donation_container"/>
+
+    </LinearLayout>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,9 +12,13 @@ import com.example.fundra.databinding.ActivityHomeBinding
 import com.example.fundra.menu.Account_Activity
 import com.example.fundra.menu.ChatBotActivity
 import com.example.fundra.menu.Wallet_Activity
+import com.example.fundra.sign.Privacy_Polices_Activity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class Home : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -51,6 +55,7 @@ class Home : AppCompatActivity() {
             showFragment(EducationFragment())
         }
 
+        observePoints()
 
         binding.menuNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -77,7 +82,10 @@ class Home : AppCompatActivity() {
             val intent = Intent(this, DonationActivity::class.java)
             startActivity(intent)
         }
-
+        binding.pointsCard.setOnClickListener {
+            val bottomSheet = PointsActivity()
+            bottomSheet.show(supportFragmentManager, "Points")
+        }
     }
     @SuppressLint("SetTextI18n")
     private fun updateUserName() {
@@ -106,8 +114,21 @@ class Home : AppCompatActivity() {
             }
         }
     }
-
-
+    private fun observePoints() {
+        val userID = firebaseAuth.currentUser?.uid
+        if (userID != null) {
+            database.child(userID).child("points").addValueEventListener(object :
+                ValueEventListener {
+                @SuppressLint("SetTextI18n")
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val pointsValue = snapshot.getValue(Int::class.java)?.toString() ?: "0"
+                    binding.points.text = pointsValue
+                }
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
+        }
+    }
     private fun showFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setCustomAnimations(

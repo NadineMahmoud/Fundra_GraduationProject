@@ -22,6 +22,10 @@ class FirstCompanyActivity : AppCompatActivity() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
+        binding.investBtn.setOnClickListener {
+            val intent = Intent(this, InvestActivity::class.java)
+            startActivity(intent)
+        }
         binding.menuNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_home -> {

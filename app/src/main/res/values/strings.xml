@@ -149,6 +149,7 @@
     <string name="new_password">New Password</string>
     <string name="confirm_new_password">Confirm New Password</string>
     <string name="udemy">Udemy</string>
+    <string name="revenue_share_payments_will_be_made_monthly_based_on_the_company_s_actual_collected_revenues_n_n_payments_will_continue_until_the_investor_receives_150_of_the_original_investment_n_n_there_is_no_fixed_timeline_as_payments_depend_on_the_company_s_performance">• Revenue share payments will be made monthly, based on the Company’s actual collected revenues.\n\n• Payments will continue until the Investor receives 150% of the original investment.\n\n• There is no fixed timeline, as payments depend on the Company’s performance.</string>
     <string-array name="Donation">
         <item>All</item>
         <item>Zakat al-Mal</item>
