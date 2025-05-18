@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".balance.WithdrawlActivity"
     android:background="@drawable/main_bg">
-
     <!-- Back Button -->
     <ImageButton
         android:id="@+id/backButton"
@@ -22,40 +21,38 @@
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
     <!-- Current Balance -->
     <TextView
         android:id="@+id/currentalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$30,850.00"
+        android:text="@string/_30_850_00"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textColor="@color/black1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/backButton"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/open_sans_bold"
         android:textSize="50sp" />
-
     <!-- Label -->
     <TextView
         android:id="@+id/av"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/available_balance"
+        android:fontFamily="@font/open_sans_semibold"
         android:textColor="@color/white"
         android:layout_marginStart="10dp"
         app:layout_constraintTop_toBottomOf="@id/currentalance"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
-
     <!-- Frame Layout Section -->
     <FrameLayout
-        android:id="@+id/vodafone_frame"
+        android:id="@+id/campaign_frame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/av"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,61 +65,54 @@
             android:background="@drawable/frame"
             android:padding="20dp"
             android:gravity="center_horizontal">
-
             <!-- Withdraw Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Withdraw"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/black1"
+                android:text="@string/withdraw"
                 android:textSize="20sp" />
-
             <!-- Withdraw Amount -->
-
             <!-- Charges Container -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="EGP 350"
-                android:textStyle="bold"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="@string/egp_350"
                 android:textColor="@color/gray"
                 android:textSize="32sp" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="5dp"
                 android:background="@drawable/bill_background"
-                android:padding="16dp">
-
+                android:padding="14dp">
                 <TextView
                     android:id="@+id/commission"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/commision"
-                    android:textColor="#092F37"
+                    android:text="@string/comission"
+                    android:textColor="@color/black1"
                     android:textSize="15sp"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintBottom_toTopOf="@id/serviceCharge"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
-
                 <TextView
                     android:id="@+id/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="0.00 EGP"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="@string/_0_00_egp"
                     android:textAlignment="textEnd"
                     android:textColor="#80000000"
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
                 <TextView
                     android:id="@+id/serviceCharge"
                     android:layout_width="wrap_content"
@@ -130,10 +120,9 @@
                     android:text="@string/service_charge"
                     android:textColor="#092F37"
                     android:textSize="15sp"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintBottom_toTopOf="@id/Line"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/commission"/>
@@ -142,21 +131,20 @@
                     android:id="@+id/T15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="15.00 EGP"
+                    android:text="@string/_15_00_egp"
                     android:layout_marginTop="10dp"
                     android:textAlignment="textEnd"
                     android:textColor="#80000000"
                     android:textSize="15sp"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/zero"/>
-
                 <View
                     android:id="@+id/Line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_marginHorizontal="10dp"
                     android:background="#DDD"
-                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -171,8 +159,8 @@
                     android:text="@string/total_amount"
                     android:textColor="#092F37"
                     android:textSize="15sp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/open_sans_bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Line"/>
 
@@ -180,37 +168,57 @@
                     android:id="@+id/T365"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="365.00 EGP"
+                    android:text="@string/_365_00_egp"
                     android:textAlignment="textEnd"
                     android:textColor="#80000000"
                     android:textSize="15sp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Line"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
             <!-- CheckBox -->
-            <CheckBox
-                android:id="@+id/checkBox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="By withdrawing you agree with the Terms of use"
-                android:textStyle="bold" />
-
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text=""
+                    android:layout_marginStart="-10dp"
+                    android:layout_marginTop="12dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black1"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textSize="13sp"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/by_withdrawing_you_agree_with_the"/>
+                <TextView
+                    android:id="@+id/Privacy_Policies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/terms_of_use"
+                    android:textColor="@color/navy_blue"/>
+            </LinearLayout>
             <!-- Withdraw Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/withdrawal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Withdraw"
-                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="25dp"
+                android:text="@string/withdraw"
+                android:fontFamily="@font/open_sans_bold"
                 android:background="@drawable/sign_btn"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 app:backgroundTint="@null" />
         </LinearLayout>
     </FrameLayout>

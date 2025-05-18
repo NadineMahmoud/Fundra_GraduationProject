@@ -2,10 +2,7 @@ package com.example.fundra
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.fundra.databinding.ActivityFirstCompanyBinding
 import com.example.fundra.menu.Account_Activity
 import com.example.fundra.menu.ChatBotActivity
@@ -13,19 +10,41 @@ import com.example.fundra.menu.Wallet_Activity
 
 class FirstCompanyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFirstCompanyBinding
+    private var totalAmount = 350000
+    private var totalDonors = 799
+    private val goalAmount = 500000
+    private var isSaved = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFirstCompanyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize SharedPreferences
+        val sharedPreferences = getSharedPreferences("SavedCards", MODE_PRIVATE)
+
+        // Restore saved state
+        isSaved = sharedPreferences.getBoolean("immersed_visible", false)
+        updateSaveButtonUI()
+
+        // Back button
         binding.backButton.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Home::class.java))
         }
+
+        // Invest button
         binding.investBtn.setOnClickListener {
-            val intent = Intent(this, InvestActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, InvestActivity::class.java))
         }
+
+        // Save button
+        binding.save.setOnClickListener {
+            isSaved = !isSaved
+            sharedPreferences.edit().putBoolean("immersed_visible", isSaved).apply()
+            updateSaveButtonUI()
+        }
+
+        // Bottom navigation
         binding.menuNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_home -> {
@@ -47,5 +66,14 @@ class FirstCompanyActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun updateSaveButtonUI() {
+        binding.save.setImageResource(if (isSaved) R.drawable.saved else R.drawable.save)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("isSaved", isSaved)
     }
 }

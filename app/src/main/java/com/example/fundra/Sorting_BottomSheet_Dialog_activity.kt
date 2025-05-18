@@ -1,10 +1,9 @@
-package com.example.fundra.donation
+package com.example.fundra
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fundra.DonationActivity
 import com.example.fundra.databinding.ActivitySortingBottomSheetDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class Sorting_BottomSheet_Dialog_activity : BottomSheetDialogFragment() {
@@ -40,26 +39,20 @@ class Sorting_BottomSheet_Dialog_activity : BottomSheetDialogFragment() {
         binding.selectAll.setOnClickListener {
             selectedType = "All"
         }
-
         binding.resultsBtn.setOnClickListener {
             filterListener?.onFilterSelected(selectedType)
             deleteVisibilityListener?.onDeleteVisibilityChanged(true)
             dismiss()
         }
-
-
         return binding.root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
     interface DeleteVisibilityListener {
         fun onDeleteVisibilityChanged(visible: Boolean)
     }
-
     override fun onStart() {
         super.onStart()
         val bottomSheet = dialog?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)

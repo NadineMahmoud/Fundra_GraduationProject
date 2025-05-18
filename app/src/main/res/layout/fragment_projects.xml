@@ -50,7 +50,6 @@
                         android:minWidth="100dp"
                         android:scaleType="fitCenter"
                         android:background="@color/transparent_black"/>
-
                     <ImageButton
                         android:id="@+id/secondLarge"
                         android:layout_width="0dp"

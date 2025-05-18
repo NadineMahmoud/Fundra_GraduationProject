@@ -26,6 +26,8 @@ class Wallet_Activity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("Users")
 
+        binding.menuNav.menu.findItem(R.id.navigation_home).isChecked = false
+
         binding.menuNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_home -> {
@@ -47,9 +49,9 @@ class Wallet_Activity : AppCompatActivity() {
                 else -> false
             }
         }
-
         binding.add.setOnClickListener {
-            Payment_Methods_Activity().show(supportFragmentManager, "PaymentMethods")
+            val bottomSheet = Payment_Methods_Activity()
+            bottomSheet.show(supportFragmentManager, "PaymentMethods")
         }
         binding.with.setOnClickListener {
             startActivity(Intent(this, WithdrawlActivity::class.java))
@@ -74,7 +76,7 @@ class Wallet_Activity : AppCompatActivity() {
         database.child(userId).child("balance").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val balance = snapshot.getValue(Double::class.java) ?: 0.0
-                binding.balance.text = "$$balance" // تحديث الرصيد على الشاشة
+                binding.balance.text = "$$balance"
             }
 
             override fun onCancelled(error: DatabaseError) {

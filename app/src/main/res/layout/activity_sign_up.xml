@@ -17,9 +17,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/vodafone_frame" />
+        app:layout_constraintBottom_toTopOf="@id/campaign_frame" />
     <FrameLayout
-        android:id="@+id/vodafone_frame"
+        android:id="@+id/campaign_frame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"

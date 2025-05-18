@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".balance.AddMoneyActivity"
     android:background="@drawable/main_bg">
-
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -16,7 +15,7 @@
         android:src="@drawable/back"
         android:background="@drawable/back_btn"
         android:padding="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +24,8 @@
         android:id="@+id/currentalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$30,850.00"
-        android:textColor="@color/darkGray"
+        android:text="@string/_30_850_00"
+        android:textColor="@color/black1"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +43,6 @@
         app:layout_constraintTop_toBottomOf="@id/currentalance"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
-
     <FrameLayout
         android:id="@+id/fram_balance"
         android:layout_width="match_parent"
@@ -57,7 +55,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/av"
         app:layout_constraintVertical_bias="1.0">
-
         <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -66,49 +63,54 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="20dp">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/add_money_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="@string/add_money"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_marginStart="80dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/spinner"/>
-
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:spinnerMode="dropdown"
-                    android:background="@drawable/signupbox"
-                    app:backgroundTint="@null"
-                    android:padding="5dp"
-                    android:layout_gravity="end|center"
-                    android:layout_marginStart="30dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/title"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:text="@string/add_money"
+                        android:textSize="22sp"
+                        android:textColor="@color/black1"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="90dp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/classificationLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/signupbox"
+                        app:endIconTintMode="src_in"
+                        app:hintTextColor="@android:color/white"
+                        android:textColorHint="@android:color/white">
+                        <AutoCompleteTextView
+                            android:id="@+id/classification_drop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:hint="@string/choose"
+                            android:background="@color/transparent_black"
+                            android:textColor="@color/black1"
+                            android:inputType="none"
+                            app:hintTextColor="@android:color/white"
+                            android:textColorHint="@android:color/white" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                </LinearLayout>
         <EditText
             android:id="@+id/balanceTX"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="EGP 00"
+            android:autofillHints="number"
+            android:hint="@string/egp_00"
+            android:inputType="number"
             android:textColorHint="#80000000"
             android:textStyle="bold"
             android:textColor="#80000000"
@@ -120,29 +122,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1.0% fee will be applied"
+            android:text="@string/_1_0_fee_will_be_applied"
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="#4D000040"
             android:fontFamily="@font/open_sans_bold"
             android:layout_marginTop="10dp" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/continue_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:textColor="@color/black"
-            android:textFontWeight="600"
             android:textSize="20sp"
             android:text="Continue"
             app:cornerRadius="100dp"
             android:fontFamily="@font/open_sans_bold"
             android:background="@drawable/sign_btn"
             app:backgroundTint="@null"/>
-
-
-
     </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

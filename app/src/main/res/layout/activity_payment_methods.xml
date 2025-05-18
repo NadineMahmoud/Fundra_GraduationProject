@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".balance.Payment_Methods_Activity">
-
     <FrameLayout
-        android:id="@+id/vodafone_frame"
+        android:id="@+id/campaign_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -24,14 +24,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select a method"
+            android:text="@string/select_a_method"
             android:textColor="@color/black1"
             android:fontFamily="@font/open_sans_bold"
             android:textSize="20sp"/>
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/card"
             android:src="@drawable/card_method"
             android:background="@drawable/card_bg"
             android:layout_gravity="start"
@@ -40,25 +40,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Use a debit/credit card"
+            android:text="@string/use_a_debit_credit_card"
             android:textSize="20sp"
             android:layout_marginTop="-35dp"
             android:textColor="@color/black1"
             android:fontFamily="@font/open_sans_semibold" />
-
         <ImageButton
             android:id="@+id/card_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/arrow"
             android:src="@drawable/arrow_side"
             android:background="@color/transparent_black"
             android:layout_gravity="end"
             android:padding="12dp"
             android:layout_marginTop="-35dp"/>
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/vodafone"
             android:src="@drawable/vodafone_method"
             android:background="@color/transparent_black"
             android:layout_gravity="start"
@@ -66,26 +66,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add cash through Vodafone"
+            android:text="@string/add_cash_through_vodafone"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="-35dp"
             android:textColor="@color/black1"
             android:fontFamily="@font/open_sans_semibold" />
-
         <ImageButton
             android:id="@+id/vodafone_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/arrow"
             android:src="@drawable/arrow_side"
             android:background="@color/transparent_black"
             android:layout_gravity="end"
             android:padding="12dp"
             android:layout_marginTop="-35dp"/>
-
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/instapay"
             android:src="@drawable/insta_pay_method"
             android:background="@color/transparent_black"
             android:layout_gravity="start"
@@ -93,23 +93,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add cash through InstaPay"
+            android:text="@string/add_cash_through_instapay"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="-35dp"
             android:textColor="@color/black1"
             android:fontFamily="@font/open_sans_semibold" />
-
         <ImageButton
             android:id="@+id/insta_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/arrow"
             android:src="@drawable/arrow_side"
             android:background="@color/transparent_black"
             android:layout_gravity="end"
             android:padding="12dp"
             android:layout_marginTop="-35dp"/>
-
     </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@
         android:src="@drawable/back"
         android:background="@drawable/back_btn"
         android:padding="10dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
+        android:textColor="@color/black1"
         android:textSize="20sp"/>
 
     <ImageView
@@ -41,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="65dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/search"
@@ -56,7 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/frame_donation">
-
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
@@ -81,7 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search"
         app:layout_constraintVertical_bias="1.0">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -90,7 +89,6 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="10dp">
-
                 <TextView
                     android:id="@+id/categories"
                     android:layout_width="wrap_content"
@@ -98,15 +96,11 @@
                     android:fontFamily="@font/open_sans_bold"
                     android:text="@string/categories"
                     android:textSize="20sp"
+                    android:textColor="@color/black1"
                     android:layout_marginBottom="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/donation_container"
@@ -486,19 +480,19 @@
                     android:layout_marginTop="50dp"
                     android:tag="Al Zakah / Al Sadakat"
                     android:src="@drawable/bet_elzahah"
+                    android:contentDescription="@string/charity"
                     app:layout_constraintBottom_toTopOf="@id/beet_tx"
                     app:layout_constraintEnd_toStartOf="@id/resala"
                     app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toEndOf="@id/masr_elkhair"
                     app:layout_constraintTop_toBottomOf="@id/mersal_tx" />
-
                 <TextView
                     android:id="@+id/beet_tx"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/open_sans_regular"
-                    android:text="Biet El\n Zakah"
+                    android:text="@string/biet_el_n_zakah"
                     android:textAlignment="center"
                     android:textColor="@color/black_donation"
                     android:textSize="13sp"
@@ -513,6 +507,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="50dp"
+                    android:contentDescription="@string/charity"
                     android:tag="Food / Community development"
                     android:src="@drawable/resallah"
                     app:layout_constraintBottom_toTopOf="@id/resala_tx"
@@ -534,10 +529,7 @@
                     app:layout_constraintEnd_toEndOf="@id/resala"
                     app:layout_constraintStart_toStartOf="@id/resala"
                     app:layout_constraintTop_toBottomOf="@id/resala" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-            </ScrollView>
         </LinearLayout>
     </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -551,7 +543,5 @@
         android:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,12 +7,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
     tools:context=".menu.Wallet_Activity">
-
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="back"
+        android:contentDescription="@string/Back"
         android:src="@drawable/back"
         android:background="@drawable/back_btn"
         android:padding="10dp"
@@ -20,123 +19,118 @@
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
+        app:layout_constraintStart_toStartOf="parent" />
     <TextView
         android:id="@+id/balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$30,850.00"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
+        android:text="@string/_30_850_00"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black1"
+        android:layout_marginStart="15dp"
         app:layout_constraintBottom_toTopOf="@id/av"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/backButton"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="40sp"/>
-
+        android:fontFamily="@font/open_sans_bold"
+        android:textSize="50sp"/>
     <TextView
         android:id="@+id/av"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/available_balance"
         android:textColor="@color/white"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_marginStart="15dp"
         app:layout_constraintTop_toBottomOf="@id/balance"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@id/av"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/fram_balance">
-
         <!-- Add Money Section -->
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
-            >
+            android:layout_marginHorizontal="25dp">
             <ImageButton
                 android:id="@+id/add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/add_money"
                 android:src="@drawable/addmoneyp"
                 android:background="@null"
                 android:layout_marginTop="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Money"
+                android:text="@string/add_money"
                 android:gravity="center"
+                android:textColor="@color/black1"
                 android:textSize="13sp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/open_sans_bold"
                 android:layout_marginTop="10dp"/>
         </LinearLayout>
-
         <!-- Withdrawal Section -->
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
-       >
+            android:layout_marginHorizontal="25dp">
             <ImageButton
                 android:id="@+id/with"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_bal"
-                android:padding="10dp"
+                android:background="@drawable/account_style"
+                android:contentDescription="@string/withdraw"
+                android:padding="15dp"
                 android:src="@drawable/withdraw"
                 android:layout_marginTop="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Withdrawal"
+                android:text="@string/withdrawal"
                 android:gravity="center"
+                android:textColor="@color/black1"
                 android:textSize="13sp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/open_sans_bold"
                 android:layout_marginTop="10dp"/>
         </LinearLayout>
-
         <!-- Card Section -->
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
-          >
+            android:layout_marginHorizontal="25dp">
             <ImageButton
                 android:id="@+id/card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_bal"
+                android:background="@drawable/account_style"
+                android:contentDescription="@string/card"
                 android:src="@drawable/card"
                 android:layout_marginTop="20dp"
-                android:padding="10dp"/>
+                android:padding="15dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Card"
+                android:text="@string/Card"
                 android:gravity="center"
                 android:textSize="13sp"
-                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/black1"
+                android:fontFamily="@font/open_sans_bold"
                 android:layout_marginTop="10dp" />
         </LinearLayout>
-
     </LinearLayout>
-
     <FrameLayout
         android:id="@+id/fram_balance"
         android:layout_width="match_parent"
@@ -148,11 +142,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/av"
         app:layout_constraintVertical_bias="1.0">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="45dp"
             android:background="@drawable/frame"
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -160,36 +153,32 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/history_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-
             <TextView
                 android:id="@+id/history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="History"
+                android:textColor="@color/black1"
+                android:text="@string/history"
                 android:fontFamily="@font/open_sans_bold"
                 android:textSize="20sp"
                 app:layout_constraintTop_toTopOf="@id/history_container"
                 app:layout_constraintStart_toStartOf="@id/history_container"
                 app:layout_constraintEnd_toEndOf="@id/history_container"/>
-
             <TextView
                 android:id="@+id/date1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="January 23, 2025"
+                android:text="@string/january_23_2025"
                 android:fontFamily="@font/open_sans_semibold"
                 android:textSize="13sp"
                 android:textColor="@color/date"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="@id/history_container"
                 app:layout_constraintTop_toBottomOf="@id/history"/>
-
             <TextView
                 android:id="@+id/amount1"
                 android:layout_width="wrap_content"
@@ -201,11 +190,11 @@
                 android:textColor="@color/date"
                 app:layout_constraintEnd_toEndOf="@id/history_container"
                 app:layout_constraintTop_toBottomOf="@id/history"/>
-
                 <ImageView
                     android:id="@+id/cairo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/one"
                     android:src="@drawable/cairo_bank"
                     app:layout_constraintTop_toBottomOf="@id/date1"
                     app:layout_constraintStart_toStartOf="@id/history_container"
@@ -214,21 +203,21 @@
                     android:id="@+id/title_history_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ATM withdrawal"
+                    android:text="@string/atm_withdrawal"
                     android:fontFamily="@font/open_sans_bold"
                     app:layout_constraintStart_toEndOf="@id/cairo"
                     app:layout_constraintTop_toBottomOf="@id/date1"
                     android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
                     android:textSize="13sp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black1"/>
                 <TextView
                     android:id="@+id/amount1_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 3000"
+                    android:text="@string/egp_3000"
                     android:textSize="13sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/black1"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintEnd_toEndOf="@id/history_container"
@@ -238,54 +227,50 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/date"
-                    android:text="10:07 pm"
+                    android:text="@string/_10_07_pm"
                     android:fontFamily="@font/open_sans_semibold"
                     android:textSize="11sp"
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="10dp"
                     app:layout_constraintTop_toBottomOf="@id/title_history_one"
                     app:layout_constraintStart_toEndOf="@id/cairo"/>
-
                 <TextView
                     android:id="@+id/date2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="May 7, 2025"
+                    android:text="@string/may_7_2025"
                     android:fontFamily="@font/open_sans_semibold"
                     android:textSize="13sp"
                     android:textColor="@color/date"
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="@id/history_container"
                     app:layout_constraintTop_toBottomOf="@id/date1_one"/>
-
                 <ImageView
                     android:id="@+id/alahly"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/ahly"
                     android:src="@drawable/alahly"
                     android:layout_marginTop="20dp"
                     app:layout_constraintTop_toBottomOf="@id/date2"
                     app:layout_constraintStart_toStartOf="@id/history_container"/>
-
-
                 <TextView
                     android:id="@+id/title_history_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cash deposit"
+                    android:text="@string/cash_deposit"
                     android:textSize="13sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/black1"
                     app:layout_constraintStart_toEndOf="@id/alahly"
                     app:layout_constraintTop_toBottomOf="@id/date2"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/open_sans_bold"
                     android:layout_marginStart="10dp"/>
-
                 <TextView
                     android:id="@+id/date2_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5:02 pm"
+                    android:text="@string/_5_02_pm"
                     android:fontFamily="@font/open_sans_semibold"
                     android:textColor="@color/date"
                     android:layout_marginStart="10dp"
@@ -293,7 +278,6 @@
                     android:textSize="11sp"
                     app:layout_constraintStart_toEndOf="@id/alahly"
                     app:layout_constraintTop_toBottomOf="@id/title_history_two"/>
-
                 <TextView
                     android:id="@+id/amount2"
                     android:layout_width="wrap_content"
@@ -305,12 +289,11 @@
                     android:layout_marginTop="40dp"
                     app:layout_constraintEnd_toEndOf="@id/history_container"
                     app:layout_constraintTop_toBottomOf="@id/amount1_one"/>
-                    
                 <TextView
                     android:id="@+id/amount2_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 7200"
+                    android:text="@string/egp_7200"
                     android:textSize="13sp"
                     android:fontFamily="@font/open_sans_bold"
                     android:textColor="@color/navy_blue"
@@ -321,7 +304,7 @@
                     android:id="@+id/date3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="october 6, 2025"
+                    android:text="@string/october_6_2025"
                     android:textColor="@color/date"
                     android:textSize="13sp"
                     android:fontFamily="@font/open_sans_semibold"
@@ -332,6 +315,7 @@
                     android:id="@+id/history_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/four"
                     android:src="@drawable/history_three"
                     app:layout_constraintTop_toBottomOf="@id/date3"
                     android:layout_marginTop="20dp"
@@ -340,20 +324,19 @@
                     android:id="@+id/title_history_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="funds"
-                    android:textColor="@color/black"
+                    android:text="@string/funds"
+                    android:textColor="@color/black1"
                     android:textSize="13sp"
                     android:fontFamily="@font/open_sans_bold"
                     android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
                     app:layout_constraintTop_toBottomOf="@id/date3"
                     app:layout_constraintStart_toEndOf="@id/history_three"/>
-
                 <TextView
                     android:id="@+id/date3_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8:45 pm"
+                    android:text="@string/_8_45_pm"
                     android:textColor="@color/date"
                     android:textSize="11sp"
                     android:layout_marginTop="7dp"
@@ -371,30 +354,27 @@
                     android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintEnd_toEndOf="@id/history_container"
                     app:layout_constraintTop_toBottomOf="@id/amount2_two"/>
-
                 <TextView
                     android:id="@+id/amount3_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 7200"
-                    android:textColor="@color/black"
+                    android:text="@string/egp_7200"
+                    android:textColor="@color/black1"
                     android:textSize="13sp"
                     android:fontFamily="@font/open_sans_semibold"
                     android:layout_marginTop="20dp"
                     app:layout_constraintTop_toBottomOf="@id/amount3"
                     app:layout_constraintEnd_toEndOf="@id/history_container"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="December 17, 2025"
+                    android:text="@string/december_17_2025"
                     android:textColor="@color/date"
                     android:layout_marginTop="20dp"
                     android:textSize="13sp"
                     android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintTop_toBottomOf="@id/date3_three"
                     app:layout_constraintStart_toStartOf="@id/history_container"/>
-
                 <TextView
                     android:id="@+id/amount4"
                     android:layout_width="wrap_content"
@@ -410,17 +390,17 @@
                     android:id="@+id/history_four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/four"
                     android:src="@drawable/history_four"
                     app:layout_constraintTop_toBottomOf="@id/amount4"
                     app:layout_constraintStart_toStartOf="@id/history_container"
                     android:layout_marginTop="20dp"/>
-
                 <TextView
                     android:id="@+id/title_history_four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Earned Profits"
-                    android:textColor="@color/black"
+                    android:text="@string/earned_profits"
+                    android:textColor="@color/black1"
                     android:textSize="13sp"
                     android:layout_marginTop="20dp"
                     android:layout_marginStart="10dp"
@@ -431,7 +411,7 @@
                     android:id="@+id/date4_four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11:27 pm"
+                    android:text="@string/_11_27_pm"
                     android:textColor="@color/date"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="7dp"
@@ -442,20 +422,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EGP 14000"
+                    android:text="@string/egp_14000"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/open_sans_semibold"
                     app:layout_constraintTop_toBottomOf="@id/amount4"
                     app:layout_constraintEnd_toEndOf="@id/history_container"
                     android:textColor="@color/navy_blue"
                     android:textSize="13sp"/>
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
             </ScrollView>
         </LinearLayout>
     </FrameLayout>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menu_nav"
         android:layout_width="match_parent"
@@ -467,11 +444,5 @@
         android:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-
-
-
-
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

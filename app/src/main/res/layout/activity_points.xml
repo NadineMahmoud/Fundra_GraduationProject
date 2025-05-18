@@ -8,7 +8,7 @@
     tools:context=".PointsActivity">
 
     <FrameLayout
-        android:id="@+id/vodafone_frame"
+        android:id="@+id/campaign_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/frame"
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
@@ -139,15 +139,19 @@
                             android:textColor="@color/black1"
                             android:fontFamily="@font/open_sans_bold"
                             android:layout_marginBottom="8dp"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="250dp"
+                            android:layout_height="205dp"
+                            app:cardCornerRadius="50dp">
                         <ImageButton
                             android:id="@+id/coursera"
-                            android:layout_width="250dp"
-                            android:layout_height="200dp"
-                            android:src="@drawable/udemy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/coursera_"
                             android:background="@android:color/transparent"
-                            android:scaleType="fitCenter"
+                            android:scaleType="centerCrop"
                             android:layout_marginBottom="8dp"/>
-
+                        </androidx.cardview.widget.CardView>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

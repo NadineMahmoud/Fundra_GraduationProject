@@ -19,15 +19,13 @@ import com.example.fundra.menu.Wallet_Activity
 class CardsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCardsBinding
-    private val bankNames = listOf("Banque Misr", "QNB", "CIB")
-    private val radio_images = listOf(R.drawable.bank_one_t_image, R.drawable.bank_three_image, R.drawable.bank_one_t_image)
+    private val bankNames = listOf("Banque Misr", "Banque Misr", "Banque Misr")
+    private val radio_images = listOf(R.drawable.visa_first, R.drawable.visa_two, R.drawable.visa_two)
     private val bankBalances = listOf("100,000", "220,000", "134,000")
     private val bankImages = listOf(
         R.drawable.card_one,
         R.drawable.card_two,
-        R.drawable.card_three
-    )
-
+        R.drawable.card_three)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCardsBinding.inflate(layoutInflater)
@@ -41,10 +39,8 @@ class CardsActivity : AppCompatActivity() {
         val adapter = BankImageAdapter(bankImages)
         binding.imageSlider.adapter = adapter
 
-        // Apply custom animation
         binding.imageSlider.setPageTransformer(FancyCardTransformer())
 
-        // Update bank name and balance based on page
         binding.imageSlider.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -65,7 +61,6 @@ class CardsActivity : AppCompatActivity() {
             finish()
         }
     }
-
     class BankImageAdapter(private val images: List<Int>) :
         RecyclerView.Adapter<BankImageAdapter.BankImageViewHolder>() {
 
@@ -80,11 +75,9 @@ class CardsActivity : AppCompatActivity() {
             }
             return BankImageViewHolder(imageView)
         }
-
         override fun onBindViewHolder(holder: BankImageViewHolder, position: Int) {
             (holder.itemView as ImageView).setImageResource(images[position])
         }
-
         override fun getItemCount(): Int = images.size
     }
 }

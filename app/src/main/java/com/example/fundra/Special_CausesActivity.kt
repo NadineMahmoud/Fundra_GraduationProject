@@ -1,10 +1,9 @@
-package com.example.fundra.donation
+package com.example.fundra
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fundra.FirstSpecialCaseActivity
 import com.example.fundra.databinding.ActivitySpecialCausesBinding
 
 class Special_CausesActivity : AppCompatActivity() {

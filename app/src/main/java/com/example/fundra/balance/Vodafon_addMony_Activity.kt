@@ -20,11 +20,9 @@ class vodafon_addMony_Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.backButton.setOnClickListener{
-            val intent = Intent(this, vodafone_Activity_receipt::class.java)
+            val intent = Intent(this, Payment_Methods_Activity::class.java)
             startActivity(intent)
         }
-
-
 
 
     }

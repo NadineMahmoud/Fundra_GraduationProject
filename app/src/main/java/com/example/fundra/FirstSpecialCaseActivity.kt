@@ -33,9 +33,11 @@ class FirstSpecialCaseActivity : AppCompatActivity() {
         updateUI()
 
         binding.donateInBtn.setOnClickListener {
-            showDonationDialog()
+            val bottomSheetDialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+            val view = layoutInflater.inflate(R.layout.activity_donation_payment_methods, null)
+            bottomSheetDialog.setContentView(view)
+            bottomSheetDialog.show()
         }
-
     }
     private fun showDonationDialog() {
         val builder = AlertDialog.Builder(this)

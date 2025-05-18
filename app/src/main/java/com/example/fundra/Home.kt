@@ -42,18 +42,18 @@ class Home : AppCompatActivity() {
 
         showFragment(CompaniesFragment())
 
-        binding.companies.setOnClickListener {
-            showFragment(CompaniesFragment())
-        }
-        binding.projects.setOnClickListener {
-            showFragment(ProjectsFragment())
-        }
-        binding.health.setOnClickListener {
-            showFragment(HealthFragments())
-        }
-        binding.edu.setOnClickListener {
-            showFragment(EducationFragment())
-        }
+//        binding.companies.setOnClickListener {
+//            showFragment(CompaniesFragment())
+//        }
+//        binding.projects.setOnClickListener {
+//            showFragment(ProjectsFragment())
+//        }
+//        binding.health.setOnClickListener {
+//            showFragment(HealthFragments())
+//        }
+//        binding.edu.setOnClickListener {
+//            showFragment(EducationFragment())
+//        }
 
         observePoints()
 

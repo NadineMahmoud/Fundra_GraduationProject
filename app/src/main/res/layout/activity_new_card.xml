@@ -7,21 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".balance.NewCardActivity"
     android:background="@drawable/main_bg">
-
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="back"
+        android:contentDescription="@string/Back"
         android:src="@drawable/back"
         android:background="@drawable/back_btn"
         android:padding="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
+        app:layout_constraintStart_toStartOf="parent" />
     <TextView
         android:id="@+id/currentalance"
         android:layout_width="wrap_content"
@@ -29,11 +26,11 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="$00.00"
-        android:textSize="40sp"
+        android:text="@string/_00_00"
+        android:textSize="50sp"
+        android:textColor="@color/black1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/backButton" />
-
     <TextView
         android:id="@+id/av"
         android:layout_width="wrap_content"
@@ -41,40 +38,35 @@
         android:text="@string/available_balance"
         android:textColor="@color/white"
         android:layout_marginStart="10dp"
-        android:fontFamily="@font/open_sans_bold"
+        android:fontFamily="@font/open_sans_semibold"
         app:layout_constraintTop_toBottomOf="@id/currentalance"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
-
     <FrameLayout
         android:id="@+id/fram_balance"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/av"
         app:layout_constraintVertical_bias="1.0">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
             android:background="@drawable/frame"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="20dp">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Money"
+                android:text="@string/add_card"
+                android:textColor="@color/black1"
                 android:fontFamily="@font/open_sans_bold"
-                android:textStyle="bold"
                 android:textSize="20sp"/>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/nameET"
                 android:layout_width="match_parent"
@@ -82,23 +74,21 @@
                 android:layout_marginTop="20dp"
                 app:boxStrokeColor="@color/black"
                 android:textColorHint="@color/black_transparent">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/cardholderTX"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/balance_box"
-                    android:fontFamily="sans-serif"
-                    android:hint="Cardholder name"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:hint="@string/cardholder_name"
                     android:textColorHint="@color/black_transparent"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/numberLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 app:boxStrokeColor="#80000000"
                 android:textColorHint="@color/black_transparent">
 
@@ -107,20 +97,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/balance_box"
-                    android:fontFamily="sans-serif"
-                    android:hint="Card number"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:hint="@string/card_number"
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/card"
                     android:textColorHint="@color/grey"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-
+                android:baselineAligned="false"
+                android:layout_marginTop="10dp">
                 <!-- TextInputLayout for Expiry Date -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/expireLayout"
@@ -130,22 +119,20 @@
                     app:boxStrokeColor="@color/black"
                     app:hintTextColor="#80000000"
                     android:textColorHint="@color/black_transparent">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/expireTX"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/balance_box"
-                        android:fontFamily="sans-serif"
+                        android:fontFamily="@font/open_sans_semibold"
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
-                        android:hint="Expiry date"
-                        android:layout_marginEnd="20dp"
+                        android:hint="@string/expiry_date"
+                        android:layout_marginEnd="5dp"
                         android:inputType="textEmailAddress"
                         android:textColorHint="@color/grey"
-                        android:gravity="start" />  <!-- محاذاة النص إلى اليسار -->
+                        android:gravity="start" />
                 </com.google.android.material.textfield.TextInputLayout>
-
                 <!-- TextInputLayout for CVV -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/cvvLayout"
@@ -156,39 +143,36 @@
                     app:boxStrokeColor="@color/black"
                     app:hintTextColor="#80000000"
                     android:textColorHint="@color/black_transparent">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/cvvTX"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/balance_box"
-                        android:fontFamily="sans-serif"
-                        android:hint="CVV"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:hint="@string/cvv"
                         android:textColorHint="@color/grey"
                         android:inputType="textEmailAddress"
-                        android:gravity="end" />
+                        android:gravity="start" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textSize="15sp"
-                android:text="Save this card for later"
+                android:textColor="@color/black1"
+                android:text="@string/save_this_card_for_later"
                 android:layout_gravity="start"
                 android:fontFamily="@font/open_sans_bold" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/save_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:textColor="@color/black"
-                android:textFontWeight="600"
                 android:textSize="20sp"
-                android:text="Save Card"
+                android:text="@string/save_card"
                 app:cornerRadius="100dp"
                 android:fontFamily="@font/open_sans_bold"
                 android:background="@drawable/sign_btn"

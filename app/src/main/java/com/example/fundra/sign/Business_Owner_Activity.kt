@@ -54,7 +54,6 @@ class Business_Owner_Activity : AppCompatActivity() {
         uploadButton.setOnClickListener {
             openFileChooser()
         }
-
         binding.signUpBtn.setOnClickListener {
             val businessName = binding.BusinessNamelET.text.toString().trim()
             val businessDescription = binding.BusinessDescriptionET.text.toString().trim()

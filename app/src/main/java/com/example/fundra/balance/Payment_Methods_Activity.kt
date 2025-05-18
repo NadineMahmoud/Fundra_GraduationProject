@@ -25,25 +25,20 @@ class Payment_Methods_Activity : BottomSheetDialogFragment() {
                         startActivity(Intent(requireActivity(), AddMoneyActivity::class.java))
                 }
                 binding.vodafoneArrow.setOnClickListener{
-                        startActivity(Intent(requireActivity(), vodafone_Activity_receipt::class.java))
+                        startActivity(Intent(requireActivity(), vodafon_addMony_Activity::class.java))
                 }
                 binding.instaArrow.setOnClickListener{
                         startActivity(Intent(requireActivity(), InstaPayActivity::class.java))
                 }
                 return binding.root
         }
-
         override fun onDestroyView() {
                 super.onDestroyView()
                 _binding = null
         }
-
         override fun onStart() {
                 super.onStart()
                 val bottomSheet = dialog?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
                 bottomSheet?.layoutParams?.height = (resources.displayMetrics.heightPixels * 0.5).toInt()
         }
-
-
-
 }

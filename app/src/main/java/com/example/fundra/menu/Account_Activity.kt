@@ -56,7 +56,7 @@ class Account_Activity : AppCompatActivity() {
                     AccountItem(R.drawable.ic_deposit, "Deposit"),
                     AccountItem(R.drawable.ic_investments, "Investments"),
                     AccountItem(R.drawable.community, "Community"),
-                    AccountItem(R.drawable.campaign, "Add campaign")
+                    AccountItem(R.drawable.campaign, "Add Campaign")
                 )
 
                 val adapter = AccountAdapter(items) { item ->

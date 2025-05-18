@@ -28,14 +28,28 @@ class InstaPayActivity : AppCompatActivity() {
             val clip = ClipData.newPlainText("label", binding.copeidOne.text.toString())
             clipboard.setPrimaryClip(clip)
 
-         //   binding.copyOne.setImageDrawable(getDrawable(R.drawable.copeid_icon))
+            binding.copyTwo.setOnClickListener {
+                val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("label", binding.copiesTwo.text.toString())
+                clipboard.setPrimaryClip(clip)
 
-        //    binding.copyOne.postDelayed({
-        //        binding.copyOne.setImageDrawable(getDrawable(R.drawable.copy))
-       //     }, 2000)
-
+                binding.copyThree.setOnClickListener {
+                    val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("label", binding.copiedThree.text.toString())
+                    clipboard.setPrimaryClip(clip)
+                }
+                binding.copied.setOnClickListener {
+                    val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("label", binding.copied.text.toString())
+                    clipboard.setPrimaryClip(clip)
+                }
+                binding.copy.setOnClickListener {
+                    val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("label", binding.copied.text.toString())
+                    clipboard.setPrimaryClip(clip)
+                }
+            }
             Toast.makeText(this, "Copied to clipboard!", Toast.LENGTH_SHORT).show()
         }
-
     }
 }

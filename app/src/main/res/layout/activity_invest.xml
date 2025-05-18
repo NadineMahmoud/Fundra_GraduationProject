@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <FrameLayout
-        android:id="@+id/vodafone_frame"
+        android:id="@+id/campaign_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="300dp"
@@ -128,7 +128,7 @@ Actual returns depend on the company’s performance"
                 android:drawableStart="@drawable/logos_mastercard"
                 android:textSize="15sp"
                 android:paddingHorizontal="5dp"
-                android:fontFamily="@font/open_sans_semibold"/>
+                android:fontFamily="@font/open_sans_regular"/>
             <RadioButton
                 android:id="@+id/credit"
                 android:layout_width="wrap_content"
@@ -140,9 +140,8 @@ Actual returns depend on the company’s performance"
                 android:layout_marginTop="-15dp"
                 android:textColor="@color/black1"
                 android:paddingHorizontal="5dp"
-                android:fontFamily="@font/open_sans_semibold"/>
+                android:fontFamily="@font/open_sans_regular"/>
         </RadioGroup>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -178,13 +177,13 @@ Actual returns depend on the company’s performance"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:text="Invest Now"
+            android:text="@string/invest_now"
             app:cornerRadius="100dp"
             android:fontFamily="@font/open_sans_bold"
             android:background="@drawable/sign_btn"
             app:backgroundTint="@null"
             android:layout_marginTop="5dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintTop_toBottomOf="@id/radioGroup"
             app:layout_constraintStart_toStartOf="@id/donation_container"
