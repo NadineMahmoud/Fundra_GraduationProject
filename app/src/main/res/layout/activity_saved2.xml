@@ -6,39 +6,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/main_bg"
     android:orientation="vertical"
-    tools:context=".SavedActivity"
+    tools:context=".SavedActivity_"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/back"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/back_button_description"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/back" />
+            android:layout_marginEnd="16dp" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/saved_title"
+            android:text="Saved"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center" />
 
         <ImageButton
             android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/search_button_description"
             android:src="@drawable/search" />
     </LinearLayout>
 
@@ -47,14 +45,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- First Page: Categories -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp">
+            app:cardCornerRadius="50dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,9 +61,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/categories_title"
-                    android:textSize="18sp" />
+                    android:text="Categories"
+                    android:textSize="18sp"
+                    android:gravity="center" />
 
                 <include layout="@layout/card_company" />
 
@@ -75,22 +71,21 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Second Page: Companies -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rounded_background"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/rounded_background">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Companies"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:paddingTop="16dp"
-                android:paddingBottom="8dp"
-                android:text="@string/companies_title"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:paddingBottom="8dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -98,11 +93,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
-
+                app:cardCornerRadius="50dp"
+                app:cardElevation="0dp">
                 <LinearLayout
-                    android:id="@+id/companies_card_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

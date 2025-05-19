@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toTopOf="@id/frame_chat"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_margin="20dp"/>
 
     <TextView
         android:id="@+id/chatTitle"

@@ -10,7 +10,6 @@
     android:id="@+id/companyimg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scaleType="centerCrop"
     android:src="@drawable/reward"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -211,7 +210,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:text="Pledge Now"
+        android:text="Invest"
         app:cornerRadius="100dp"
         android:fontFamily="@font/open_sans_bold"
         android:background="@drawable/sign_btn"
@@ -223,7 +222,6 @@
         app:layout_constraintStart_toStartOf="@id/donation_container"
         app:layout_constraintEnd_toEndOf="@id/donation_container"
         app:layout_constraintBottom_toBottomOf="@id/donation_container"/>
-
 </LinearLayout>
 </FrameLayout>
 

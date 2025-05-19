@@ -230,6 +230,26 @@
     <string name="social_media_links">Social Media Links</string>
     <string name="i_agree_to_the_processing_of">I agree to the processing of</string>
     <string name="invest_now">Invest Now</string>
+    <string name="back_button_description">Back</string>
+    <string name="search_button_description">Search</string>
+    <string name="save_button_description">Save</string>
+    <string name="saved_title">Saved</string>
+    <string name="categories_title">Categories</string>
+    <string name="companies_title">Companies</string>
+    <string name="companies_adds_count">0 Adds</string>
+    <string name="company_image_description">Company image</string>
+    <string name="companies_background_description">Companies background</string>
+    <string name="navigate_next_description">Navigate next</string>
+    <string name="projects_title">Projects</string>
+    <string name="projects_adds_count">0 Adds</string>
+    <string name="project_image_description">Project image</string>
+    <string name="projects_background_description">Projects background</string>
+    <string name="card_image_description">Card image</string>
+    <string name="card_text_image_description">Card text image</string>
+    <string name="unsave_button">Unsaved</string>
+    <string name="invest_button">Invest</string>
+    <string name="sample_company">Sample Company</string>
+
     <string name="charity">charity</string>
     <string name="biet_el_n_zakah">Biet El\n Zakah</string>
     <string-array name="Donation">

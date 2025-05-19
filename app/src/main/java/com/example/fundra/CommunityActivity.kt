@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -27,16 +28,33 @@ class CommunityActivity : AppCompatActivity() {
         }
         binding.posts.setOnClickListener {
             showFragment(PostsActivity())
+            setSelectedTab(binding.posts)
         }
         binding.following.setOnClickListener {
             showFragment(FollowingActivity())
+            setSelectedTab(binding.following)
         }
         binding.reels.setOnClickListener {
             showFragment(ReelsActivity())
+            setSelectedTab(binding.reels)
         }
 
+        binding.profile.setOnClickListener{
+            val intent = Intent(this, Account_Activity::class.java)
+            startActivity(intent)
+        }
     }
-        private fun showFragment(fragment: Fragment) {
+    private fun setSelectedTab(selected: TextView) {
+        val allTabs = listOf(binding.posts, binding.following, binding.reels)
+        allTabs.forEach {
+            it.setBackgroundResource(R.drawable.community_text) // default background
+        }
+        selected.setBackgroundResource(R.drawable.selected_text) // selected background
+    }
+
+
+
+    private fun showFragment(fragment: Fragment) {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.setCustomAnimations(
                 R.anim.fragment_enter,

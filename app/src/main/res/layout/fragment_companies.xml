@@ -14,9 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-
-
     <TextView
         android:id="@+id/largeTX"
         android:layout_width="wrap_content"
@@ -25,7 +22,6 @@
         android:fontFamily="@font/open_sans_bold"
         android:textColor="@color/black1"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:layout_marginStart="16dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -64,7 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/company_one"
+                android:src="@drawable/company_two_high"
                 android:layout_marginEnd="10dp"
                 android:minWidth="100dp"
                 android:scaleType="fitCenter"
@@ -75,7 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/company_one"
+                android:src="@drawable/company_three_high"
                 android:minWidth="100dp"
                 android:background="@color/transparent_black"/>
         </LinearLayout>
@@ -89,7 +85,6 @@
         android:fontFamily="@font/open_sans_bold"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="16dp"
@@ -129,7 +124,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/company_four"
+                android:src="@drawable/company_two_mwduim"
                 android:layout_marginEnd="10dp"
                 android:minWidth="100dp"
                 android:background="@color/transparent_black"/>
@@ -138,7 +133,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/company_one"
+                android:src="@drawable/company_three_meduim"
                 android:minWidth="100dp"
                 android:background="@color/transparent_black"/>
         </LinearLayout>
@@ -151,13 +146,11 @@
         android:fontFamily="@font/open_sans_bold"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="16dp"
         app:layout_constraintTop_toBottomOf="@id/scrollMedium"
         app:layout_constraintStart_toStartOf="parent"/>
-
     <HorizontalScrollView
         android:id="@+id/scrollSmall"
         android:layout_width="match_parent"
@@ -182,7 +175,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/companyo"
+                android:src="@drawable/company_one"
                 android:layout_marginEnd="10dp"
                 android:minWidth="100dp"
                 android:background="@color/transparent_black"/>
@@ -192,7 +185,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/companyo"
+                android:src="@drawable/company_two_high"
                 android:layout_marginEnd="10dp"
                 android:minWidth="100dp"
                 android:background="@color/transparent_black"/>
@@ -202,7 +195,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/companyo"
+                android:src="@drawable/company_three_high"
                 android:minWidth="100dp"
                 android:background="@color/transparent_black"/>
         </LinearLayout>

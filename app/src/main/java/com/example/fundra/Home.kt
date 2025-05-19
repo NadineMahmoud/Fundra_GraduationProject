@@ -42,19 +42,14 @@ class Home : AppCompatActivity() {
 
         showFragment(CompaniesFragment())
 
-//        binding.companies.setOnClickListener {
-//            showFragment(CompaniesFragment())
-//        }
-//        binding.projects.setOnClickListener {
-//            showFragment(ProjectsFragment())
-//        }
-//        binding.health.setOnClickListener {
-//            showFragment(HealthFragments())
-//        }
-//        binding.edu.setOnClickListener {
-//            showFragment(EducationFragment())
-//        }
-
+        binding.companies.setOnClickListener {
+           showFragment(CompaniesFragment())
+            setSelectedTab(binding.companies)
+       }
+        binding.projects.setOnClickListener {
+          showFragment(ProjectsFragment())
+            setSelectedTab(binding.projects)
+      }
         observePoints()
 
         binding.menuNav.setOnItemSelectedListener { menuItem ->
@@ -81,6 +76,7 @@ class Home : AppCompatActivity() {
         binding.donation.setOnClickListener {
             val intent = Intent(this, DonationActivity::class.java)
             startActivity(intent)
+            setSelectedTab(binding.donation)
         }
         binding.pointsCard.setOnClickListener {
             val bottomSheet = PointsActivity()
@@ -128,6 +124,13 @@ class Home : AppCompatActivity() {
                 }
             })
         }
+    }
+    private fun setSelectedTab(selected: TextView) {
+        val allTabs = listOf(binding.companies, binding.projects, binding.donation)
+        allTabs.forEach {
+            it.setBackgroundResource(R.drawable.community_text)
+        }
+        selected.setBackgroundResource(R.drawable.selected_text)
     }
     private fun showFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()

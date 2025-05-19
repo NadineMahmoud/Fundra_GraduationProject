@@ -18,18 +18,14 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/reel_one"
+        android:src="@drawable/posts_one"
         android:layout_gravity="center"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/reel_two"
-                android:scaleType="fitCenter"
+                android:src="@drawable/following_two"
+                android:scaleType="fitStart"
                 android:layout_gravity="center"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/reel_three"/>
 
         </LinearLayout>
     </ScrollView>

@@ -1,5 +1,6 @@
 package com.example.fundra
 
+import Invest_Projects
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -28,7 +29,7 @@ class FirstProjectActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             binding.investBtn.setOnClickListener {
-                val intent = Intent(this, InvestActivity::class.java)
+                val intent = Intent(this, rewardBasedActivity::class.java)
                 startActivity(intent)
             }
             binding.menuNav.setOnItemSelectedListener { menuItem ->

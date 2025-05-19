@@ -13,8 +13,8 @@
         <!-- Notification Icon -->
         <ImageButton
             android:id="@+id/notification"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/back_btn"
@@ -28,7 +28,7 @@
         android:layout_width="93dp"
         android:layout_height="41dp"
         android:layout_marginEnd="20sp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="62dp"
         android:elevation="0dp"
         app:cardCornerRadius="50dp"
         app:strokeColor="@color/transparent_black"
@@ -88,7 +88,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="16dp"
         app:cardCornerRadius="50dp"
         app:cardElevation="4dp"
@@ -97,7 +97,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/card_layout">
-
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
@@ -107,209 +106,68 @@
             android:background="@android:color/transparent"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="5dp" />
     </androidx.cardview.widget.CardView>
 
     <!-- Categories Section -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/fragment_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search">
-
-        <!-- Companies Card -->
-
-        <!--        <androidx.cardview.widget.CardView-->
-        <!--            android:id="@+id/companies"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="64dp"-->
-        <!--            android:layout_marginStart="50dp"-->
-        <!--            android:layout_marginEnd="10dp"-->
-        <!--            android:layout_marginBottom="5dp"-->
-        <!--            app:cardCornerRadius="12dp"-->
-        <!--            app:layout_constraintBottom_toTopOf="@+id/companies_tv"-->
-        <!--            app:layout_constraintEnd_toStartOf="@id/projects"-->
-        <!--            app:layout_constraintHorizontal_chainStyle="spread"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent">-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/img_companies"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_margin="10dp"-->
-        <!--                android:src="@drawable/company" />-->
-        <!--        </androidx.cardview.widget.CardView>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/companies_tv"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="5dp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/companies"-->
-<!--            android:textSize="13sp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/companies"-->
-<!--            app:layout_constraintStart_toStartOf="@id/companies"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/companies" />-->
-
-        <!-- Projects Card -->
-
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/projects"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="64dp"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            android:layout_marginBottom="24dp"-->
-<!--            app:cardCornerRadius="12dp"-->
-<!--            app:layout_constraintBottom_toTopOf="@id/projects_tv"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/donation"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/companies"-->
-<!--            app:layout_constraintTop_toTopOf="@id/companies">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/img_projects"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:src="@drawable/projects" />-->
-<!--        </androidx.cardview.widget.CardView>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/projects_tv"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="5dp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/projects"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/projects"-->
-<!--            app:layout_constraintStart_toStartOf="@id/projects"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/projects" />-->
-        <!-- Health Card
         <androidx.cardview.widget.CardView
-            android:id="@+id/health"
+            android:id="@+id/card_fragments"
             android:layout_width="0dp"
-            android:layout_height="64dp"
-            app:cardCornerRadius="12dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toEndOf="@id/projects"
-            app:layout_constraintTop_toTopOf="@id/projects"
-            app:layout_constraintEnd_toStartOf="@id/edu">
-            <ImageView
-                android:id="@+id/img_health"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:src="@drawable/health" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/health_tv"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/health"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/health"
-            app:layout_constraintStart_toStartOf="@id/health"
-            app:layout_constraintEnd_toEndOf="@id/health" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/edu"
-            android:layout_width="0dp"
-            android:layout_height="64dp"
-            app:cardCornerRadius="12dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toEndOf="@id/health"
-            app:layout_constraintTop_toTopOf="@id/health"
-            app:layout_constraintEnd_toStartOf="@id/donation">
-
-            <ImageView
-                android:id="@+id/img_edu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:src="@drawable/edu" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/edu_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/education"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/edu"
-            app:layout_constraintStart_toStartOf="@id/edu"
-            app:layout_constraintEnd_toEndOf="@id/edu" />
-        -->
-        <!-- Donation Card -->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/donation"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
             android:layout_marginStart="20dp"
+            app:cardCornerRadius="20dp"
             android:layout_marginEnd="24dp"
-            app:cardCornerRadius="12dp"
-            android:backgroundTint="@color/light_blue"
-            android:background="@color/light_blue"
+            android:background="@drawable/card_light_blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                android:padding="15dp"
+                android:padding="20dp"
+                android:background="@drawable/card_light_blue"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/companies"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="#092F37"
+                    android:padding="10dp"
+                    android:textColor="@color/black1"
                     android:fontFamily="@font/open_sans_bold"
                     android:textSize="16sp"
                     android:layout_marginStart="10dp"
                     android:text="Business" />
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/projects"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_bold"
                     android:layout_weight="1"
+                    android:padding="10dp"
                     android:textColor="#092F37"
                     android:textSize="16sp"
                     android:textAlignment="center"
                     android:text="@string/projects" />
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/donation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="10dp"
                     android:textSize="16sp"
                     android:textColor="#092F37"
                     android:fontFamily="@font/open_sans_bold"
@@ -319,18 +177,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!--        <TextView-->
-<!--            android:id="@+id/dona_tv"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="5dp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/donation"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/donation"-->
-<!--            app:layout_constraintStart_toStartOf="@id/donation"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/donation" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout

@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fundra.PaymentMethodsWithdActivity
+import com.example.fundra.PointsActivity
 import com.example.fundra.databinding.ActivityWithdrawlBinding
 import com.example.fundra.menu.Wallet_Activity
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +27,11 @@ class WithdrawlActivity : AppCompatActivity() {
 
         binding.backButton.setOnClickListener {
             startActivity(Intent(this, Wallet_Activity::class.java))
+        }
+        binding.withdrawal.setOnClickListener {
+            val bottomSheet = PaymentMethodsWithdActivity()
+            bottomSheet.show(supportFragmentManager, "PaymentMethods")
+
         }
 
         firebaseAuth = FirebaseAuth.getInstance()
